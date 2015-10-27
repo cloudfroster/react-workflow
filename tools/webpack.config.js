@@ -10,6 +10,7 @@
 import path from 'path';
 import webpack from 'webpack';
 import merge from 'lodash.merge';
+import ExtractTextPlugin from 'extract-text-webpack-plugin';
 
 const DEBUG = !process.argv.includes('--release');
 const VERBOSE = process.argv.includes('--verbose');
@@ -120,6 +121,8 @@ const appConfig = merge({}, config, {
   plugins: [
     ...config.plugins,
     new webpack.DefinePlugin(GLOBALS),
+    new webpack.optimize.CommonsChunkPlugin('common.js'),
+    new ExtractTextPlugin("style.css"),
     ...(!DEBUG ? [
       new webpack.optimize.DedupePlugin(),
       new webpack.optimize.UglifyJsPlugin({
@@ -158,7 +161,8 @@ const appConfig = merge({}, config, {
       } : JS_LOADER,
       ...config.module.loaders, {
         test: /\.css$/,
-        loader: 'style-loader/useable!css-loader!postcss-loader',
+        //loader: 'style-loader/useable!css-loader!postcss-loader',
+        loader: ExtractTextPlugin.extract("css-loader"),
       },
     ],
   },

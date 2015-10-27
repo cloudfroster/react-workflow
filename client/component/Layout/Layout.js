@@ -1,5 +1,5 @@
 import React, { PropTypes, Component } from 'react';
-
+import style from './Layout.css';
 class Layout extends Component {
 
   static propTypes = {
@@ -10,7 +10,7 @@ class Layout extends Component {
   render() {
     return !this.props.error ? (
       <div>
-        <h1>HELLO WORLD</h1>
+        <h1 className="Layout-title">HELLO WORLD</h1>
       </div>
     ) : this.props.children;
   }
