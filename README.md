@@ -33,6 +33,8 @@
 
 Just clone the repo and run :
 ```shell
+$ npm install
+...
 $ npm start
 ```
 
