@@ -1,6 +1,6 @@
 ## React-workflow  — "isomorphic" web app boilerplate
 
-> [React Starter Kit](http://www.reactstarterkit.com) is an opinionated
+> React-workflow is an opinionated
 > boilerplate for web development built on top of Facebook's
 > [React](https://facebook.github.io/react/) library,
 > [Node.js](https://nodejs.org/) / [Express](http://expressjs.com/) server
@@ -17,6 +17,7 @@
 ├── /node_modules/              # 3rd-party libraries and utilities
 ├── /client/                    # The source code of the application for client
 │   ├── /public/                # Static files
+├───   └──/build/               # build files
 ├── /server/                    # The source code of express server
 ├── /tools/                     # Build automation scripts and utilities
 │   ├── /bundle.js              # Bundles the web resources into package(s) through Webpack

@@ -13,7 +13,7 @@ import del from 'del';
  * Cleans up the output (build) directory.
  */
 async function clean() {
-  await del(['.tmp', './client/public/bundle.js'], { dot: true });
+  await del(['.tmp', './client/pulic/build/*'], { dot: true });
 }
 
 export default clean;

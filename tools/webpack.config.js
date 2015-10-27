@@ -110,7 +110,7 @@ const appConfig = merge({}, config, {
     './client/app.js',
   ],
   output: {
-    path: path.join(__dirname, '../client/public'),
+    path: path.join(__dirname, '../client/public/build'),
     filename: 'bundle.js',
   },
 
