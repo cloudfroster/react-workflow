@@ -1,12 +1,3 @@
-/**
- * React Starter Kit (http://www.reactstarterkit.com/)
- *
- * Copyright © 2014-2015 Kriasoft, LLC. All rights reserved.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE.txt file in the root directory of this source tree.
- */
-
 import path from 'path';
 import webpack from 'webpack';
 import merge from 'lodash.merge';
@@ -69,7 +60,7 @@ const config = {
   ],
 
   resolve: {
-    extensions: ['', '.webpack.js', '.web.js', '.js', '.jsx'],
+    extensions: ['', '.webpack.js', '.web.js', '.js', '.jsx', '.less'],
   },
 
   module: {
@@ -90,10 +81,6 @@ const config = {
 
   postcss: function plugins(bundler) {
     return [
-      require('postcss-import')({
-        addDependencyTo: bundler
-      }),
-      require('postcss-nested')(),
       require('postcss-cssnext')({
         autoprefixer: AUTOPREFIXER_BROWSERS
       }),
@@ -160,9 +147,11 @@ const appConfig = merge({}, config, {
         },
       } : JS_LOADER,
       ...config.module.loaders, {
+        test: /\.less$/,
+        loader: ExtractTextPlugin.extract("css-loader?sourceMap!postcss-loader?sourceMap!less-loader?sourceMap"),
+      }, {
         test: /\.css$/,
-        //loader: 'style-loader/useable!css-loader!postcss-loader',
-        loader: ExtractTextPlugin.extract("css-loader"),
+        loader: ("style-loader!css-loader"),
       },
     ],
   },

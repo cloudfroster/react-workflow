@@ -10,6 +10,7 @@ import path from 'path';
 const app = express();
 
 app.set('port', (process.env.PORT || 5000));
+app.set('env', 'development');
 
 // static file
 app.use(express.static(path.join(__dirname, '../client', 'public')));
@@ -25,11 +26,22 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 
+// development error handler will print stacktrace
+if (app.get('env') === 'development') {
+  app.use(function(err, req, res, next) {
+    res.status(err.status || 500);
+    res.render('error', {
+      message: err.message,
+      error: err
+    });
+  });
+}
 
 // jump to index.html
-app.get('/', function(req, res) {
+app.get('/', (req, res) => {
   res.render('index');
 });
+
 
 // start server
 app.listen(app.get('port'), () => {

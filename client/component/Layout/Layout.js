@@ -1,5 +1,6 @@
 import React, { PropTypes, Component } from 'react';
-import style from './Layout.css';
+import style from './Layout.less';
+
 class Layout extends Component {
 
   static propTypes = {
@@ -10,7 +11,7 @@ class Layout extends Component {
   render() {
     return !this.props.error ? (
       <div>
-        <h1 className="Layout-title">HELLO WORLD</h1>
+        <h1 className="Layout-title">嗨!</h1>
       </div>
     ) : this.props.children;
   }
