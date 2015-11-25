@@ -1,11 +1,11 @@
 /**
  * set up express server at localhost:5000
  */
-import express from 'express';
-import logger from 'morgan';
-import cookieParser from 'cookie-parser';
-import bodyParser from 'body-parser';
-import path from 'path';
+var express =require('express');
+var logger =require('morgan');
+var cookieParser =require('cookie-parser');
+var bodyParser =require('body-parser');
+var path =require('path');
 
 const app = express();
 
@@ -13,12 +13,7 @@ app.set('port', (process.env.PORT || 5000));
 app.set('env', 'development');
 
 // static file
-app.use(express.static(path.join(__dirname, '../client', 'public')));
-
-// view engine setup
-app.set('views', path.join(__dirname, '../client', 'view'));
-app.engine('html', require('ejs').renderFile);
-app.set('view engine', 'html');
+app.use(express.static(path.join(__dirname, '../static')));
 
 // express middleware
 app.use(logger('dev'));
@@ -39,7 +34,7 @@ if (app.get('env') === 'development') {
 
 // jump to index.html
 app.get('/', (req, res) => {
-  res.render('index');
+  res.sendFile(path.join(__dirname, '../static/views','index.html'));
 });
 
 

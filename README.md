@@ -1,4 +1,4 @@
-## React-workflow  — "isomorphic" web app boilerplate
+## React-workflow
 
 > React-workflow is an opinionated
 > boilerplate for web development built on top of Facebook's
@@ -9,6 +9,7 @@
 > [Babel](http://babeljs.io/) and [BrowserSync](http://www.browsersync.io/).
 > Helping you to stay productive following the best practices. A solid starting
 > point for both professionals and newcomers to the industry.
+> `isomorphic` not support
 
 ### Directory Layout
 
