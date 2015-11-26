@@ -1,0 +1,6 @@
+{
+  "name": "Box",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./Box.js"
+}

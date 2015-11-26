@@ -7,7 +7,6 @@ const DEBUG = process.argv.indexOf('--release') < 0 ? true : false;
 const VERBOSE = process.argv.indexOf('--verbose') < 0 ? false : true;
 const WATCH = global.WATCH === undefined ? false : global.WATCH;
 const AUTOPREFIXER_BROWSERS = [
-  'Android 2.3',
   'Android >= 4',
   'Chrome >= 35',
   'Firefox >= 31',
@@ -78,14 +77,6 @@ const config = {
       loader: 'file-loader',
     }, ],
   },
-
-  postcss: function plugins(bundler) {
-    return [
-      require('postcss-cssnext')({
-        autoprefixer: AUTOPREFIXER_BROWSERS
-      }),
-    ];
-  },
 };
 
 //
@@ -147,10 +138,10 @@ const appConfig = merge({}, config, {
       }*/) : JS_LOADER,
       ...config.module.loaders, {
         test: /\.less$/,
-        loader: ExtractTextPlugin.extract("css-loader?sourceMap!postcss-loader?sourceMap!less-loader?sourceMap"),
+        loader: ExtractTextPlugin.extract(`css-loader?sourceMap!autoprefixer-loader?browsers=${AUTOPREFIXER_BROWSERS}&sourceMap!less-loader?sourceMap`),
       }, {
         test: /\.css$/,
-        loader: ("style-loader!css-loader"),
+        loader: (`style-loader!css-loader!autoprefixer-loader?browsers=${AUTOPREFIXER_BROWSERS}&sourceMap`),
       },
     ],
   },
