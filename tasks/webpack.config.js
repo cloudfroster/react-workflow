@@ -6,15 +6,17 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const DEBUG = process.argv.indexOf('--release') < 0 ? true : false;
 const VERBOSE = process.argv.indexOf('--verbose') < 0 ? false : true;
 const WATCH = global.WATCH === undefined ? false : global.WATCH;
-const AUTOPREFIXER_BROWSERS = [
-  'Android >= 4',
-  'Chrome >= 35',
-  'Firefox >= 31',
-  'Explorer >= 9',
-  'iOS >= 7',
-  'Opera >= 12',
-  'Safari >= 7.1',
-];
+const AUTOPREFIXER = `{
+  browsers: [
+    'Android >= 4',
+    'Chrome >= 35',
+    'Firefox >= 31',
+    'Explorer >= 9',
+    'iOS >= 7',
+    'Opera >= 12',
+    'Safari >= 7.1',
+  ],
+}`;
 const GLOBALS = {
   'process.env.NODE_ENV': DEBUG ? '"development"' : '"production"',
   __DEV__: DEBUG,
@@ -117,31 +119,33 @@ const appConfig = merge({}, config, {
   ],
   module: {
     loaders: [
-      WATCH ? merge({}, JS_LOADER /*{  //暂时弃用,等到兼容babel6
-        query: {
-          // Wraps all React components into arbitrary transforms
-          // https://github.com/gaearon/babel-plugin-react-transform
-          plugins: ['react-transform'],
-          extra: {
-            'react-transform': {
-              transforms: [{
-                transform: 'react-transform-hmr',
-                imports: ['react'],
-                locals: ['module'],
-              }, {
-                transform: 'react-transform-catch-errors',
-                imports: ['react', 'redbox-react'],
-              }, ],
-            },
-          },
-        },
-      }*/) : JS_LOADER,
+      WATCH ? merge({}, JS_LOADER
+        /*{  //暂时弃用,等到兼容babel6
+               query: {
+                 // Wraps all React components into arbitrary transforms
+                 // https://github.com/gaearon/babel-plugin-react-transform
+                 plugins: ['react-transform'],
+                 extra: {
+                   'react-transform': {
+                     transforms: [{
+                       transform: 'react-transform-hmr',
+                       imports: ['react'],
+                       locals: ['module'],
+                     }, {
+                       transform: 'react-transform-catch-errors',
+                       imports: ['react', 'redbox-react'],
+                     }, ],
+                   },
+                 },
+               },
+             }*/
+      ) : JS_LOADER,
       ...config.module.loaders, {
         test: /\.less$/,
-        loader: ExtractTextPlugin.extract(`css-loader?sourceMap!autoprefixer-loader?browsers=${AUTOPREFIXER_BROWSERS}&sourceMap!less-loader?sourceMap`),
+        loader: ExtractTextPlugin.extract(`css-loader?sourceMap!autoprefixer-loader?${AUTOPREFIXER}!less-loader?sourceMap`),
       }, {
         test: /\.css$/,
-        loader: (`style-loader!css-loader!autoprefixer-loader?browsers=${AUTOPREFIXER_BROWSERS}&sourceMap`),
+        loader: (`style-loader!css-loader!autoprefixer-loader?${AUTOPREFIXER}`),
       },
     ],
   },

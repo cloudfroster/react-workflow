@@ -4,8 +4,9 @@ const co = require('co');
  * Launches a development web server with "live reload" functionality -
  * synchronizing URLs, interactions and code changes across multiple devices.
  */
- 
+
 global.WATCH = true;
+global.NODEMON = true;
 
 function start() {
   return co(function* () {

@@ -5,7 +5,6 @@ const webpackHotMiddleware = require('webpack-hot-middleware');
 /**
  * open browserSync
  */
-global.WATCH = true;
 const webpackConfig = require('./webpack.config'); // Client-side bundle configuration
 const bundler = webpack(webpackConfig);
 

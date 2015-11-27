@@ -1,12 +1,13 @@
 import React, { PropTypes, Component } from 'react'
 import { Motion, spring } from 'react-motion'
+import style from './Box.less'
 
 export default class Box extends Component {
 
 	static propTypes = {
 
 	}
-	
+
 	static defaultProps = {
 
 	}

@@ -1,26 +1,48 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
+
 <head>
-	<meta charset='utf-8'>
-  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-  <meta name='viewport' content='width=device-width, initial-scale=1'>
-  <!-- <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"> -->
-  <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！-->
-  <!--[if lt IE 9]>
-  <script src="//cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-  <![endif]-->
-  <meta name='apple-mobile-web-app-capable' content='yes'> <!-- 苹果允许全屏模式 -->
-  <meta name='apple-mobile-web-app-status-bar-style' content='black'> <!-- 苹果浏览器顶部状态栏颜色 -->
-  <meta name='format-detection' content='telephone=no'> <!-- 忽略数字为电话号码 -->
-  <link rel='apple-touch-icon-precomposed' href='/favicon.png'>
-  <link rel='shortcut icon' href='/favicon.png'>
-  <link rel='icon' type='image/x-icon' href='/favicon.png'>
-	<title>app</title>
-	<link rel="stylesheet" href="/build/style.css">
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta http-equiv="cleartype" content="on">
+    <meta name="description" content="">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
+    <!--[if lt IE 9]>
+    <script src="//cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <![endif]-->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="img/touch/apple-touch-icon-144x144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/touch/apple-touch-icon-114x114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/touch/apple-touch-icon-72x72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="img/touch/apple-touch-icon-57x57-precomposed.png">
+    <link rel="shortcut icon" sizes="196x196" href="img/touch/touch-icon-196x196.png">
+    <link rel="shortcut icon" href="img/touch/apple-touch-icon.png">
+    <!-- Tile icon for Win8 (144x144 + tile color) -->
+    <meta name="msapplication-TileImage" content="img/touch/apple-touch-icon-144x144-precomposed.png">
+    <meta name="msapplication-TileColor" content="#222222">
+    <!-- SEO: If mobile URL is different from desktop URL, add a canonical link to the desktop page -->
+    <!--
+          <link rel="canonical" href="http://www.example.com/" >
+    -->
+    <!-- Add to homescreen for Chrome on Android -->
+    <!--
+          <meta name="mobile-web-app-capable" content="yes">
+    -->
+    <!-- For iOS web apps. Delete if not needed. https://github.com/h5bp/mobile-boilerplate/issues/94 -->
+    <!--
+          <meta name="apple-mobile-web-app-capable" content="yes">
+          <meta name="apple-mobile-web-app-status-bar-style" content="black">
+          <meta name="apple-mobile-web-app-title" content="">
+    -->
+    <title>app</title>
+    <link rel="stylesheet" href="/build/style.css">
 </head>
+
 <body>
-	<div id="app"></div>
-	<script src="/build/common.js"></script>
-	<script src="/build/bundle.js"></script>
+    <div id="app"></div>
+    <script src="/build/common.js"></script>
+    <script src="/build/bundle.js"></script>
 </body>
+
 </html>
