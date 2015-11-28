@@ -1,11 +1,12 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import App from './containers/App'
-
 import normalize from 'normalize.css'
+import base from './theme/base.less'
+import Router from './routes'
+
 
 ReactDOM.render((
-	<App />
+	<Router />
 ),document.getElementById('app'));
 
 // must accept hot reload

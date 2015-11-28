@@ -5,8 +5,9 @@ const co = require('co');
  * synchronizing URLs, interactions and code changes across multiple devices.
  */
 
-global.WATCH = true;
-global.NODEMON = true;
+global.WATCH = false;
+global.NODEMON = false;
+global.DEBUG = false;
 
 function start() {
   return co(function* () {

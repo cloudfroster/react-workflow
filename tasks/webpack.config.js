@@ -3,7 +3,7 @@ const webpack = require('webpack');
 const merge = require('lodash.merge');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
-const DEBUG = process.argv.indexOf('--release') < 0 ? true : false;
+const DEBUG = global.DEBUG ? true : false;
 const VERBOSE = process.argv.indexOf('--verbose') < 0 ? false : true;
 const WATCH = global.WATCH === undefined ? false : global.WATCH;
 const AUTOPREFIXER = `{

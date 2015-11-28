@@ -1,6 +1,6 @@
 import React, { PropTypes, Component } from 'react'
-
 import Box from '../../components/Box'
+import GlobalNav from '../GlobalNav'
 
 export default class App extends Component {
 
@@ -10,12 +10,12 @@ export default class App extends Component {
 	}
 
 	render() {
-		return !this.props.error ? (
-	      <div>
-	        <h1 className="App-title">嗨!</h1>
-	        <Box />
-	      </div>
-		) : this.props.children;
+		return(
+      <div className="App">
+        <GlobalNav></GlobalNav>
+        {this.props.children || <div> dashboard</div>}
+      </div>
+		)
 	}
 
 }
