@@ -8,7 +8,6 @@ export default class App extends Component {
 		//children: PropTypes.element.isRequired,
 		//error: PropTypes.object,
 	}
-
 	render() {
 		return(
       <div className="App">
