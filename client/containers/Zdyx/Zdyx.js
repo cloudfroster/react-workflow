@@ -9,5 +9,6 @@ export default class Zdyx extends Component {
       </div>
 		)
 	}
-
 }
+
+module.exports = Zdyx;

@@ -11,3 +11,5 @@ export default class Story extends Component {
 	}
 
 }
+
+module.exports = Story;

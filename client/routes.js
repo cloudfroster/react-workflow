@@ -1,29 +1,44 @@
 import React from 'react'
 import {Router, IndexRoute, Route} from 'react-router'
-import {
-  App,
-  Zdyx,
-  About,
-  Story,
-  } from './containers/index';
+import App from './containers/App'
+import {loginState, logOut, check} from './helpers/auth'
 
-export default () => {
-
-  function requireAuth(nextState, replaceState) {
-    if (false){
-      replaceState({ nextPathname: nextState.location.pathname }, '/')
-    }
-  }
-
-  return (
-    <Router>
-        <Route path="/" component={App}>
-          <Route onEnter={requireAuth}>
-            <Route path="zdyx" component={Zdyx}></Route>
-            <Route path="about" component={About}></Route>
-            <Route path="story" component={Story}></Route>
-          </Route>
-        </Route>
-    </Router>
-  )
+const routes = {
+  childRoutes: [{
+    path: '/login',
+    getComponent(location, cb) {
+      require.ensure([], (require) => {
+        cb(null, require('./containers/Login'))
+      })
+    },
+  }, {
+    path: '/logout',
+    onEnter: logOut,
+  }, {
+    onEnter: check,
+    path: '/',
+    component: App,
+    childRoutes: [{
+      path: 'zdyx',
+      getComponent(location, cb) {
+        require.ensure([], (require) => {
+          cb(null, require('./containers/Zdyx'))
+        })
+      },
+    }, {
+      path: 'about',
+      getComponent(location, cb) {
+        require.ensure([], (require) => {
+          cb(null, require('./containers/About'))
+        })
+      },
+    }, {
+      path: 'story',
+      getComponent(location, cb) {
+        cb(null, require('./containers/Story'))
+      },
+    }, ],
+  }, ]
 }
+
+export default routes

@@ -11,3 +11,5 @@ export default class About extends Component {
 	}
 
 }
+
+module.exports = About;
