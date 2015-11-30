@@ -1,5 +1,0 @@
-export About from './About'
-export App from './App'
-export GlobalNav from './GlobalNav'
-export Story from './Story'
-export Zdyx from './Zdyx'

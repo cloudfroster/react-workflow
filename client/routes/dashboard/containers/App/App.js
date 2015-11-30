@@ -1,8 +1,7 @@
 import React, { PropTypes, Component } from 'react'
-import {connect} from 'react-redux'
 import GlobalMenu from '../GlobalMenu'
 
-class App extends Component {
+export default class App extends Component {
 
 	static propTypes = {
 		//children: PropTypes.element.isRequired,
@@ -11,7 +10,7 @@ class App extends Component {
 	render() {
 		return(
       <div className="App">
-        <GlobalMenu/>
+        <GlobalMenu />
         {this.props.children}
       </div>
 		)
@@ -19,8 +18,4 @@ class App extends Component {
 
 }
 
-export default connect((state) => {
-  return {
-    user : state.user,
-  }
-})(App)
+module.exports = App
