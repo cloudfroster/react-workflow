@@ -1,5 +1,5 @@
 const initState = {
-  userName: 'admin marchen',
+  userName: 'admin',
   isSignIn: true,
 }
 

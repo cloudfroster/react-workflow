@@ -7,27 +7,30 @@ import thunk from 'redux-thunk'
 import createLogger from 'redux-logger'
 import rootReducer from '../reducers'
 
+function configureStore(initState) {
 
-const finalCreateStore = compose(
-  applyMiddleware(thunk),
-  reduxReactRouter({ routes, createHistory }),
-  //applyMiddleware(createLogger()),
-  devTools()
-)(createStore)
+  const finalCreateStore = compose(
+    applyMiddleware(thunk),
+    reduxReactRouter({
+      routes,
+      createHistory,
+    }),
+    //applyMiddleware(createLogger()),
+    devTools()
+  )(createStore)
 
-
-function configureStore(initialState) {
-  const store = finalCreateStore(rootReducer, initialState)
+  const store = finalCreateStore(rootReducer, initState)
 
   if (module.hot) {
     // Enable Webpack hot module replacement for reducers
     module.hot.accept('../reducers', () => {
-      const nextRootReducer = require('../reducers')
-      store.replaceReducer(nextRootReducer)
-    })
+      const nextRootReducer = require('../reducers');
+      store.replaceReducer(nextRootReducer);
+    });
   }
 
   return store
 }
 
-export default configureStore()
+export default configureStore
+

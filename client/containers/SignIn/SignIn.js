@@ -2,8 +2,18 @@ import React, { PropTypes, Component } from 'react'
 
 export default class SignIn extends Component {
 
-	static propTypes = {
-	}
+  static propTypes = {
+
+  }
+
+  static defaultProps = {
+
+  }
+
+  constructor(props) {
+    super(props)
+    this.state = {}
+  }
 
 	render() {
 		return(

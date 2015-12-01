@@ -1,1 +1,86 @@
 // web site theme
+//-------------------------------------------------//
+//|          扩展maxin
+//-------------------------------------------------//
+
+//******************************************* 清楚浮动 *********************************************/
+//清除浮动老版本
+// .clearfix() {
+//   *zoom: 1;
+//   &:after {
+//     display: block;
+//     clear: both;
+//     content: "";
+//     visibility: hidden;
+//     height: 0;
+//   }
+// }
+//清除浮动新版本
+.clearfix() {
+  *zoom: 1;
+  &:after {
+    content:"\200B";
+    display:block;
+    height:0;
+    clear:both;
+  }
+}
+
+//******************************************* 小工具 *********************************************/
+//长单词强制换行
+.wrap() {
+  text-wrap: wrap;
+  white-space: -moz-pre-wrap;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+//文字溢出省略号表示
+.text-autocut() {
+  overflow: hidden;
+  white-space: nowrap;
+  -webkit-text-overflow:ellipsis;
+  -khtml-text-overflow: ellipsis;
+  -icab-text-overflow: ellipsis;
+  -moz-text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+}
+//******************************************* 各种移动端bug修复 **********************************/
+//去掉手持设备点击时出现的透明层(一般在头部做格式化)
+.delete-highlight(transparent){
+  a,button,input{
+    -webkit-tap-highlight-color: transparent; /* For some Androids */
+    tap-highlight-color: transparent;
+  }
+}
+.delete-highlight(@_,@color:rgba(0,0,0,0)){
+  a,button,input{
+    -webkit-tap-highlight-color: @color;
+    tap-highlight-color: @color;
+  }
+}
+
+//长按页面时不触发系统菜单
+.no-callout(){
+  html,body {
+    -webkit-touch-callout: none;
+    touch-callout: none;
+  }
+}
+
+//长按无法选择文本,不弹出复制，粘贴等选项
+.no-user-select(){
+  html,body {
+    -webkit-user-select: none;
+    user-select: none;
+  }
+}
+
+//去掉点击（触摸）高光
+//.delete-highlight(rgba(1,1,10,5));
+//.delete-highlight(transparent);
+//长按页面时不触发系统菜单
+//.no-callout();
+//长按无法选择文本,不弹出复制，粘贴等选项
+//.no-user-select();
+//

@@ -4,10 +4,19 @@ import GlobalMenu from '../GlobalMenu'
 
 class App extends Component {
 
-	static propTypes = {
-		//children: PropTypes.element.isRequired,
-		//error: PropTypes.object,
-	}
+  static propTypes = {
+
+  }
+
+  static defaultProps = {
+
+  }
+
+  constructor(props) {
+    super(props)
+    this.state = {}
+  }
+
 	render() {
 		return(
       <div className="App">

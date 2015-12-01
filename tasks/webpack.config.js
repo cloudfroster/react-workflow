@@ -1,7 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const merge = require('lodash.merge');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+//const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const DEBUG = global.DEBUG ? true : false;
 const VERBOSE = process.argv.indexOf('--verbose') < 0 ? false : true;
@@ -73,7 +73,7 @@ const config = {
       loader: 'raw-loader',
     }, {
       test: /\.(png|jpg|jpeg|gif|svg|woff|woff2)$/,
-      loader: 'url-loader?limit=10000',
+      loader: 'url-loader?limit=10000',  // 10kb
     }, {
       test: /\.(eot|ttf|wav|mp3)$/,
       loader: 'file-loader',
@@ -102,7 +102,7 @@ const appConfig = merge({}, config, {
     ...config.plugins,
     new webpack.DefinePlugin(GLOBALS),
     new webpack.optimize.CommonsChunkPlugin('common.js'),
-    new ExtractTextPlugin("style.css"),
+    //new ExtractTextPlugin("style.css"),
     ...(!DEBUG ? [
       //new webpack.optimize.DedupePlugin(),
       new webpack.optimize.UglifyJsPlugin({
@@ -142,7 +142,8 @@ const appConfig = merge({}, config, {
       ) : JS_LOADER,
       ...config.module.loaders, {
         test: /\.less$/,
-        loader: ExtractTextPlugin.extract(`css-loader?sourceMap!autoprefixer-loader?${AUTOPREFIXER}!less-loader?sourceMap`),
+        //loader: ExtractTextPlugin.extract(`css-loader?sourceMap!autoprefixer-loader?${AUTOPREFIXER}!less-loader?sourceMap`),
+        loader: 'style-loader?sourceMap!css-loader?sourceMap!less-loader?sourceMap',
       }, {
         test: /\.css$/,
         loader: (`style-loader!css-loader!autoprefixer-loader?${AUTOPREFIXER}`),

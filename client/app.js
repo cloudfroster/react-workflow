@@ -5,7 +5,9 @@ import base from './theme/base.less'
 import {Provider} from 'react-redux'
 import {ReduxRouter} from 'redux-router'
 import { DevTools, DebugPanel, LogMonitor } from 'redux-devtools/lib/react'
-import store from './store/configureStore'
+import configureStore from './store/configureStore'
+
+const store = configureStore()
 
 ReactDOM.render((
   <div>
@@ -25,6 +27,6 @@ ReactDOM.render((
 
 // must accept hot reload
 if(module.hot) {
-	module.hot.accept()
+  module.hot.accept()
 }
 
