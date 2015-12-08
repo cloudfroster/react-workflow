@@ -7,4 +7,9 @@ module.exports = {
 
     })
   },
+  getChildRoutes: (location, cb) => {
+    require.ensure([], (require) => {
+      cb(null, require('./routes'))
+    })
+  }
 }

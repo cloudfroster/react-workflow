@@ -34,7 +34,7 @@ if (app.get('env') === 'development') {
 
 // jump to index.html
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../static/views','index.html'));
+  res.sendFile(path.join(__dirname, '../static/index.html'));
 });
 
 

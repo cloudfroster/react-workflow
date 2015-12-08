@@ -1,11 +1,14 @@
 const path = require('path');
 const webpack = require('webpack');
 const merge = require('lodash.merge');
+const AssetsPlugin = require('assets-webpack-plugin');
 //const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
-const DEBUG = global.DEBUG ? true : false;
-const VERBOSE = process.argv.indexOf('--verbose') < 0 ? false : true;
-const WATCH = global.WATCH === undefined ? false : global.WATCH;
+const DEBUG = global.DEBUG;
+const VERBOSE = global.VERBOSE;
+const WATCH = global.WATCH;
+const ENTRY = '../client/app.js';  // webpack entry
+const OUTPUT = '../static/build';  // webpack output
 const AUTOPREFIXER = `{
   browsers: [
     'Android >= 4',
@@ -23,22 +26,17 @@ const GLOBALS = {
 };
 const JS_LOADER = {
   test: /\.jsx?$/,
-  include: [
-    path.join(__dirname, '../node_modules/react-routing/src'),
-    path.join(__dirname, '../client')
-  ],
+  exclude: /(node_modules)/,
   loader: 'babel-loader',
 };
 
-//
-// Common configuration chunk to be used for both
-// client-side (app.js) and server-side (server.js) bundles
+// client-side (app.js)
 // -----------------------------------------------------------------------------
 
 const config = {
   output: {
-    publicPath: '/build',
-    sourcePrefix: '  ',
+    publicPath: '/build/',
+    sourcePrefix: '',
   },
 
   cache: DEBUG,
@@ -57,6 +55,7 @@ const config = {
   },
 
   plugins: [
+    ...(!DEBUG ? new AssetsPlugin({fullPath: false}) : []),
     new webpack.optimize.OccurenceOrderPlugin(),
   ],
 
@@ -79,6 +78,7 @@ const config = {
       loader: 'file-loader',
     }, ],
   },
+
 };
 
 //
@@ -88,23 +88,34 @@ const config = {
 const appConfig = merge({}, config, {
   entry: [
     ...(WATCH ? ['webpack-hot-middleware/client'] : []),
-    './client/app.js',
+    path.join(__dirname, ENTRY),
   ],
   output: {
-    path: path.join(__dirname, '../static/build'),
-    filename: 'bundle.js',
+    trunkFilename: DEBUG ? '[id].bundle.js' : '[id].[chunkhash].bundle.js',
+    path: path.join(__dirname, OUTPUT),
+    filename: DEBUG ? 'bundle.js' : '[chunkhash].[name].bundle.js',
   },
 
-  // Choose a developer tool to enhance debugging
   // http://webpack.github.io/docs/configuration.html#devtool
   devtool: DEBUG ? 'cheap-module-eval-source-map' : false,
   plugins: [
     ...config.plugins,
     new webpack.DefinePlugin(GLOBALS),
-    new webpack.optimize.CommonsChunkPlugin('common.js'),
+    new webpack.optimize.CommonsChunkPlugin({
+      name: "commons",
+      // (the commons chunk name)
+
+      filename: DEBUG ? 'commons.js' : '[chunkhash].[name].js',
+      // (the filename of the commons chunk)
+
+      minChunks: 3,
+      // (Modules must be shared between 3 entries)
+
+      // chunks: ["pageA", "pageB"],
+      // (Only use these entries)
+    }),
     //new ExtractTextPlugin("style.css"),
     ...(!DEBUG ? [
-      //new webpack.optimize.DedupePlugin(),
       new webpack.optimize.UglifyJsPlugin({
         compress: {
           warnings: VERBOSE,
@@ -142,12 +153,11 @@ const appConfig = merge({}, config, {
       ) : JS_LOADER,
       ...config.module.loaders, {
         test: /\.less$/,
-        //loader: ExtractTextPlugin.extract(`css-loader?sourceMap!autoprefixer-loader?${AUTOPREFIXER}!less-loader?sourceMap`),
-        loader: 'style-loader?sourceMap!css-loader?sourceMap!less-loader?sourceMap',
+        loader: 'style-loader!css-loader?' + (DEBUG ? 'sourceMap' : '') + `!autoprefixer?${AUTOPREFIXER}!less-loader`,
       }, {
-        test: /\.css$/,
-        loader: (`style-loader!css-loader!autoprefixer-loader?${AUTOPREFIXER}`),
-      },
+        test: /\.css/,
+        loader: 'style-loader!css-loader?' + (DEBUG ? 'sourceMap' : '') + `!autoprefixer?${AUTOPREFIXER}`,
+      }
     ],
   },
 });

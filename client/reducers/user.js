@@ -3,7 +3,7 @@ const initState = {
   isSignIn: true,
 }
 
-export default function user(state = initState, action) {
+function user(state = initState, action) {
   switch(action.type) {
     case 'sign-in':
       return Object.assign({}, state, {isSignIn: true})
@@ -13,3 +13,6 @@ export default function user(state = initState, action) {
       return state
   }
 }
+
+export default user
+module.exports = user

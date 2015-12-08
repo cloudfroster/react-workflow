@@ -5,10 +5,10 @@ const co = require('co');
  * synchronizing URLs, interactions and code changes across multiple devices.
  */
 
-// Development model proposed all open
-global.WATCH = true;
-global.DEBUG = true;
-global.NODEMON = true;
+// Development model
+global.WATCH = true;  // watch rebuild...
+global.DEBUG = true;  // hot reload...
+global.VERBOSE = false;  // verbose webpack info...
 
 
 function start() {

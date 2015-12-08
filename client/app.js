@@ -7,7 +7,7 @@ import {ReduxRouter} from 'redux-router'
 import { DevTools, DebugPanel, LogMonitor } from 'redux-devtools/lib/react'
 import configureStore from './store/configureStore'
 
-const store = configureStore()
+const store = window.store = configureStore()
 
 ReactDOM.render((
   <div>

@@ -31,7 +31,7 @@ function server() {
     console.log("App restarted due to:\n'$FILENAME'\" with title \"nodemon\"'");
   }
   return new Promise((resolve, reject) => {
-    global.NODEMON ? startNodemon() : require('../server/server.js');
+    global.DEBUG ? startNodemon() : require('../server/server.js');
     resolve();
   });
 }

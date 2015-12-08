@@ -25,11 +25,11 @@ class GlobalMenu extends Component {
             <li className='GlobalMenu-logo'>
               <img src={require('./logo.png')} alt="logo" title="logo"/>
             </li>
-            <li><Link to="/">首页</Link></li>
-            <li><Link to="/customerInsight">客户洞察</Link></li>
-            <li><Link to="/activeMarketing">主动营销</Link></li>
-            <li><Link to="/joinMarketing">联合营销</Link></li>
-            <li><Link to="/contentManagement">内容管理</Link></li>
+            <li><Link to="/" activeClassName='GlobalMenu-active'>首页</Link></li>
+            <li><Link to="/customerInsight" activeClassName='GlobalMenu-active'>客户洞察</Link></li>
+            <li><Link to="/activeMarketing" activeClassName='GlobalMenu-active'>主动营销</Link></li>
+            <li><Link to="/joinMarketing" activeClassName='GlobalMenu-active'>联合营销</Link></li>
+            <li><Link to="/contentManagement" activeClassName='GlobalMenu-active'>内容管理</Link></li>
             <li><Link to="/loyaltyManagement">忠诚度管理</Link></li>
             <li><Link to="/precisionAdvertising">精准广告</Link></li>
             <li><Link to="/orderCenter">订单中心</Link></li>
