@@ -11,5 +11,5 @@
 
 # TECHNOLOGY COLOPHON
 
-    HTML5, CSS3
-    nodejs, jQuery, Normalize.css, webpack
+    HTML5, CSS3,
+    nodejs, jQuery, Normalize.css, less, babel, webpack

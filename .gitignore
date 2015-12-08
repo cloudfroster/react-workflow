@@ -1,6 +1,6 @@
 # Read about how to use .gitignore: https://help.github.com/articles/ignoring-files
 # project-specific
-static/build
+build
 
 # OS and IDE
 .emacs*

@@ -1,14 +1,14 @@
 const path = require('path');
 const webpack = require('webpack');
 const merge = require('lodash.merge');
-const AssetsPlugin = require('assets-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 //const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const DEBUG = global.DEBUG;
 const VERBOSE = global.VERBOSE;
 const WATCH = global.WATCH;
 const ENTRY = '../client/app.js';  // webpack entry
-const OUTPUT = '../static/build';  // webpack output
+const OUTPUT = '../build';  // webpack output
 const AUTOPREFIXER = `{
   browsers: [
     'Android >= 4',
@@ -35,7 +35,7 @@ const JS_LOADER = {
 
 const config = {
   output: {
-    publicPath: '/build/',
+    publicPath: '/',
     sourcePrefix: '',
   },
 
@@ -55,7 +55,12 @@ const config = {
   },
 
   plugins: [
-    ...(!DEBUG ? new AssetsPlugin({fullPath: false}) : []),
+    new HtmlWebpackPlugin({  // create index.html
+      filename: 'index.html',
+      inject: true,
+      template: 'html?removeOptionalTags=false!./client/index.html',
+      favicon: './client/favicon.ico',
+    }),
     new webpack.optimize.OccurenceOrderPlugin(),
   ],
 
@@ -153,10 +158,10 @@ const appConfig = merge({}, config, {
       ) : JS_LOADER,
       ...config.module.loaders, {
         test: /\.less$/,
-        loader: 'style-loader!css-loader?' + (DEBUG ? 'sourceMap' : '') + `!autoprefixer?${AUTOPREFIXER}!less-loader`,
+        loader: 'style-loader!css-loader?' + (DEBUG ? 'sourceMap' : '') + `!autoprefixer-loader?${AUTOPREFIXER}!less-loader`,
       }, {
         test: /\.css/,
-        loader: 'style-loader!css-loader?' + (DEBUG ? 'sourceMap' : '') + `!autoprefixer?${AUTOPREFIXER}`,
+        loader: 'style-loader!css-loader?' + (DEBUG ? 'sourceMap' : '') + `!autoprefixer-loader?${AUTOPREFIXER}`,
       }
     ],
   },

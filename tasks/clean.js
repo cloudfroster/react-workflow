@@ -6,7 +6,7 @@ const del = require('del');
 function clean() {
   return new Promise((reslove, reject) => {
   	try{
-  		del(['.tmp', 'build/*', 'static/build/*'], { dot: true });
+  		del(['.tmp', 'build/*'], { dot: true });
   		reslove();
   	}catch(e) {
   		reject(e);
