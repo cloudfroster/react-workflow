@@ -1,0 +1,14 @@
+{
+  "name": "node-server",
+  "script": "server.js",
+  "node_args": "",
+  "args" : ["9000"],
+  "log_date_format": "YYYY-MM-DD HH:mm Z",
+  "error_file": "/var/log/node-server/node-app.stderr.log",
+  "out_file": "/var/log/node-server/node-app.stdout.log",
+  "instances": 0,
+  "exec_mode": "cluster_mode",
+  "watch": true,
+  "ignore_watch": "node_modules"
+}
+

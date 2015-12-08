@@ -10,13 +10,13 @@ global.DEBUG = false;  // hot reload...
 global.VERBOSE = false;  // verbose webpack info...
 
 
-function start() {
+function deploy() {
   return co(function* () {
     yield run(require('./clean'));
     yield run(require('./bundle'));
     yield run(require('./server'));
-    yield run(require('./publish'))
+    yield run(require('./publish'));
   });
 }
 
-module.exports =  start;
+module.exports =  deploy;

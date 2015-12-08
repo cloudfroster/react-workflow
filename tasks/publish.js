@@ -13,14 +13,14 @@ function publish() {
       //message: 'Updates',
       //repo: 'https://example.com/other/repo.git',
       //user: {name: '', email: ''},
-      //clone: 'temp',
+      clone: 'temp',
       //push: true,
       //silent: true,
       //logger: function(string){},
       //git: '/path/to/git',
     }
 
-    ghpages.publish(path.join(__dirname, '../build/'), options, function(err) {
+    ghpages.publish(path.join(__dirname, '../build'), options, function(err) {
       if(err) {
         reject(err)
       }

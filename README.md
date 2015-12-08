@@ -16,18 +16,20 @@
 ```
 .
 ├── /node_modules/              # 3rd-party libraries and utilities
+├── /build/                     # build files
 ├── /client/                    # The source code of the application for client
-│   ├── /public/                # Static files
-├───   └──/build/               # build files
 ├── /server/                    # The source code of express server
-├── /tools/                     # Build automation scripts and utilities
+├── /tasks/                     # Build automation scripts and utilities
 │   ├── /bundle.js              # Bundles the web resources into package(s) through Webpack
 │   ├── /clean.js               # Cleans up the output (build) folder
-│   ├── /config.js              # Webpack configuration for application bundles
-│   ├── /serve.js               # Launches the Node.js/Express web server
+│   ├── /webpack.config.js      # Webpack configuration for application bundles
+│   ├── /server.js              # Launches the Node.js/Express web server
+│   └── /deploy.js              # bundle and deploy build files to git branch
+│   └── /publish.js             # deploy build files to git branch
+│   └── /browserSync.js         # browserSync tools and webpack middleware
 │   └── /start.js               # Launches the development web server with "live reload"
 │── package.json                # The list of 3rd party libraries and utilities
-└── preprocessor.js             # ES6 transpiler settings for Jest
+└── processes.json              # production settings for PM2
 ```
 
 ### Getting Started
@@ -37,6 +39,12 @@ Just clone the repo and run :
 $ npm install
 ...
 $ npm start
+```
+
+### other commder
+
+```shell
+$ npm run deploy  (deploy your site to your git `production` branch)
 ```
 
 ### Learn More
@@ -58,6 +66,6 @@ $ npm start
 ### License
 
 Copyright © 2014-2015 marchen. This source code is licensed under the MIT
-license found in the [LICENSE.txt](https://github.com/kriasoft/react-starter-kit/blob/master/LICENSE.txt)
+license found in the [LICENSE.txt](https://github.com/chen844033231/react-workflow/blob/master/LICENSE.txt)
 file. The documentation to the project is licensed under the
 [CC BY-SA 4.0](http://creativecommons.org/licenses/by-sa/4.0/) license.

@@ -3,11 +3,11 @@
 
 # TEAM
 
-    <name> -- <role> -- <email>
+    <marchen> -- <developer> -- <844033231@qq.com>
 
 # THANKS
 
-    <name>
+    <github, node, npm>
 
 # TECHNOLOGY COLOPHON
 
