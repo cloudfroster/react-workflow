@@ -12,6 +12,22 @@
 > point for both professionals and newcomers to the industry.
 > not a isomorphic application.
 
+### Getting Started
+
+Just clone the repo and run :
+```shell
+$ npm install
+...
+$ npm start
+```
+
+### other commder
+
+```shell
+$ npm run deploy  (deploy your site to your git `production` branch)
+```
+
+
 ### Directory Layout
 
 ```
@@ -33,20 +49,6 @@
 └── processes.json              # production settings for PM2
 ```
 
-### Getting Started
-
-Just clone the repo and run :
-```shell
-$ npm install
-...
-$ npm start
-```
-
-### other commder
-
-```shell
-$ npm run deploy  (deploy your site to your git `production` branch)
-```
 
 ### Learn More
 
