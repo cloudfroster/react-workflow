@@ -43,6 +43,7 @@
     "babel-preset-stage-0": "^6.1.18",
     "browser-sync": "^2.10.0",
     "co": "^4.6.0",
+    "colors": "^1.1.2",
     "css-loader": "^0.23.0",
     "del": "^2.1.0",
     "extract-text-webpack-plugin": "^0.9.1",

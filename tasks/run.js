@@ -3,12 +3,14 @@ function format(time) {
 }
 
 function run(fn, options) {
+  const colors = require('colors')
+
   const start = new Date();
-  console.log(`[${format(start)}] Starting '${fn.name}'...`);
+  console.log(`[${format(start).magenta}] Starting '${fn.name.cyan}'...`);
   return fn(options).then(() => {
     const end = new Date();
     const time = end.getTime() - start.getTime();
-    console.log(`[${format(end)}] Finished '${fn.name}' after ${time} ms`);
+    console.log(`[${format(end).magenta}] Finished '${fn.name.cyan}' after ${time} ms`);
   });
 }
 

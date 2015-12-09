@@ -1,6 +1,7 @@
 /**
  * set up express server at localhost:5000
  */
+var colors = require('colors');
 var express =require('express');
 var logger =require('morgan');
 var cookieParser =require('cookie-parser');
@@ -41,7 +42,7 @@ app.get('*', (req, res) => {
 // start server
 app.listen(app.get('port'), () => {
   /* eslint-disable no-console */
-  console.log('The server is running at http://localhost:' + app.get('port'));
+  console.log(`The server is running at http://localhost:${app.get('port')}`.cyan);
   if (process.send) {
     process.send('online');
   }
