@@ -1,4 +1,7 @@
-# 版本1.0.0(-_-)
+# 版本1.0.0(-_-) 2015/12/8
+* 添加greenkeeper来保持最新的npm包依赖
+
+# 版本1.0.0(-_-) 2015/12/8
 * 修复html发布的hash问题,采用`html-webpack-plugin`来动态产生html的`link`和`script`标签.
 * 新增发布功能,命令 `npm deploy`, 这个命令会hash编译文件到build目录,然后把里面的代码发布到本仓库的`production`分支.(可在`tasks/publish.js`里面配置)
 
