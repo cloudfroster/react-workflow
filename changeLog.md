@@ -1,6 +1,6 @@
 # 版本1.0.0(-_-)
 * 修复html发布的hash问题,采用`html-webpack-plugin`来动态产生html的`link`和`script`标签.
-* 新增发布功能,命令 `npm deploy`, 这个命令会hash编译文件到build目录,然后把里面的代码发布到本仓库的`production`分支.(可在`tasks/publish.js`里面配置)
+* 新增发布功能,命令 `npm run deploy`, 这个命令会hash编译文件到build目录,然后把里面的代码发布到本仓库的`production`分支.(可在`tasks/publish.js`里面配置)
 
 
 
