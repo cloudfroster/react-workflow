@@ -9,7 +9,7 @@ function publish() {
       src: '**/*',
       dotfiles: true,
       //add: true,  // never remove existing files
-      branch: 'production',
+      //branch: 'production',
       //message: 'Updates',
       //repo: 'https://example.com/other/repo.git',
       //user: {name: '', email: ''},
