@@ -1,6 +1,7 @@
 import React, { PropTypes, Component } from 'react'
-import style from './App.less'
-import Nav from '../Nav'
+import {
+  Issue1,
+} from '../../components'
 
 export default class App extends Component {
 
@@ -9,9 +10,8 @@ export default class App extends Component {
 
 	render() {
 		return(
-      <div className="activeMarketing-container">
-        <Nav />
-        {this.props.children || <div>activeMarketing index</div>}
+      <div>
+        <Issue1 />
       </div>
 		)
 	}

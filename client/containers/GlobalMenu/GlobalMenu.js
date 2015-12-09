@@ -26,6 +26,7 @@ class GlobalMenu extends Component {
               <img src={require('./logo.png')} alt="logo" title="logo"/>
             </li>
             <li><Link to="/" activeClassName='GlobalMenu-active'>首页</Link></li>
+            <li><Link to="/issue">react常见问题</Link></li>
             <li><Link to="/customerInsight" activeClassName='GlobalMenu-active'>客户洞察</Link></li>
             <li><Link to="/activeMarketing" activeClassName='GlobalMenu-active'>主动营销</Link></li>
             <li><Link to="/joinMarketing" activeClassName='GlobalMenu-active'>联合营销</Link></li>

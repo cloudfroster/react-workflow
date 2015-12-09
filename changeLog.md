@@ -1,4 +1,7 @@
-# 版本1.0.0(-_-)
+# 版本1.0.0(-_-) 2015/12/8
+* 添加greenkeeper来保持最新的npm包依赖
+
+# 版本1.0.0(-_-) 2015/12/8
 * 修复html发布的hash问题,采用`html-webpack-plugin`来动态产生html的`link`和`script`标签.
 * 新增发布功能,命令 `npm run deploy`, 这个命令会hash编译文件到build目录,然后把里面的代码发布到本仓库的`production`分支.(可在`tasks/publish.js`里面配置)
 
@@ -13,7 +16,9 @@
 * 目前只能热刷新reducers的改变,不能热刷新react组件的改变.(因为react-transform还不支持babel6,等待支持babel6,就替换上去支持组件的热替换了)
 * 还不支持hash发布.(文件version)
 * 没有采用同构,而是用的html文件.(打算后面动态产生html文件,从而采用非覆盖式发布代码)
-* 由于采用了style-loader,发现在chrome浏览器中,大的图片显示不出来.(bug)
+* 由于采用了style-loader,发现在chrome浏览器中,大的图片显示不出来.(bug)(压缩发布后问题解决)
+* 由于采用的style-loader,会在加载dom元素后,在去加载样式,从而样式有延迟.不过只是第一次加载会有延迟.(压缩发布后问题解决)
+
 
 # 已解决问题
 * 图片hash处理采用把图片打包放在build里面.
@@ -22,7 +27,12 @@
 
 
 
-
+---------------------------------------------------
+# todo
+* 等待gh-pages包可以选取数组形式的文件,从而可以指定发布的文件夹下的东西和文件
+* 等待react-router升级,目前采用history@1.13.1
+* 等待redux-router修复初始化警告bug
+* 做mock数据的处理
 
 
 

@@ -2,6 +2,7 @@
  * inclued all childRoutes, Array Type
  */
 import dashboard from './dashboard'
+import issue from './issue'
 import customerInsight from './customerInsight'
 import activeMarketing from './activeMarketing'
 import joinMarketing from './joinMarketing'
@@ -16,6 +17,7 @@ import changePassword from './changePassword'
 
 const childRoutes = [
   dashboard,
+  issue,
   customerInsight,
   activeMarketing,
   joinMarketing,

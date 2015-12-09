@@ -2,6 +2,9 @@ import React, { PropTypes, Component } from 'react'
 import {connect} from 'react-redux'
 import style from './App.less'
 
+
+let timeHander;
+
 class App extends Component {
 
 	static propTypes = {
@@ -15,12 +18,12 @@ class App extends Component {
   }
 
   componentWillUnmount() {
-    console.log()
+    clearInterval(timeHander)
   }
 
   clickHandle(e) {
-    //setInterval(() => {window.store.dispatch({type:'TIME'})},1000)
-    $TIME()
+    clearInterval(timeHander)
+    timeHander = setInterval(() => {window.store.dispatch({type:'TIME'})},1000)
   }
 
 	render() {
@@ -28,10 +31,10 @@ class App extends Component {
     const {time} = this.props
 
 		return(
-      <div>
+      <div className="dashboard-container">
         <h1>{this.state.welcome}</h1>
         <h2>{time}</h2>
-        <div className='start-time' onClick={this.clickHandle.bind(this)}>间</div>
+        <button className='start-time' onClick={this.clickHandle.bind(this)}>点击开始计时</button>
         {this.props.children}
       </div>
 		)
