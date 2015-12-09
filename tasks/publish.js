@@ -13,7 +13,7 @@ function publish() {
       //message: 'Updates',
       //repo: 'https://example.com/other/repo.git',
       //user: {name: '', email: ''},
-      clone: 'temp',
+      //clone: 'temp',
       //push: true,
       //silent: true,
       //logger: function(string){},
