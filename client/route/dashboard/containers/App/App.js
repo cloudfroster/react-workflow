@@ -15,8 +15,6 @@ class App extends Component {
     this.state = {
       welcome : 'welcome',
     }
-    timeHander = null;
-    window.store.dispatch({type:'TIME'})
   }
 
   componentWillUnmount() {

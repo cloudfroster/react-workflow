@@ -31,6 +31,7 @@
 # todo
 * 等待gh-pages包可以选取数组形式的文件,从而可以指定发布的文件夹下的东西和文件
 * 等待react-router升级,目前采用history@1.13.1
+* 等待redux-router修复初始化警告bug
 * 做mock数据的处理
 
 
