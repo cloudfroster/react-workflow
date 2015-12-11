@@ -16,8 +16,6 @@
   > Time traveling debugger
   > Unidirectional data flow
   > ...
-  
-  
 ```
 
 ### How
