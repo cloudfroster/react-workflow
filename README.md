@@ -45,6 +45,7 @@ $ npm start
 ### other commder
 
 ```shell
+$ npm run lint      (lint your js files)
 $ npm run start     (start develop model)
 $ npm run publish   (copy file and publish your site to git `gh-pages` branch)
 $ npm run deploy    (clean bundle server and deploy your application)
