@@ -1,19 +1,22 @@
 ## React-workflow
 
 ### Why
-  Large SPA application is hard to design, because a lot of things to consider, the boilerplate had solved the difficulty for you:
-  * ES6
-  * Modular
-  * Component
-  * Dynamic routing
-  * Base64 encoding
-  * File hash cache
-  * incremental load
-  * Compression combined
-  * Time traveling debugger
-  * Unidirectional data flow
-  * ...
-
+```
+  Large SPA application is hard to design, because a lot of things to consider
+  The boilerplate had solved the difficulty for you:
+  
+  > ES6
+  > Modular
+  > Component
+  > Dynamic routing
+  > Base64 encoding
+  > File hash cache
+  > incremental load
+  > Compression combined
+  > Time traveling debugger
+  > Unidirectional data flow
+  > ...
+```
 
 ### What
 > React-workflow is a large SPA
