@@ -15,7 +15,7 @@
   * ...
 
 
-### How
+### What
 > React-workflow is a large SPA
 > boilerplate for web development built on top of Facebook's
 > [React](https://facebook.github.io/react/) library,use
