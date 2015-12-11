@@ -1,6 +1,22 @@
 ## React-workflow
 
-> React-workflow is a big SPA
+### Why
+  Large SPA application is hard to design, because a lot of things to consider, the boilerplate had solved the difficulty for you:
+  * ES6
+  * Modular
+  * Component
+  * Dynamic routing
+  * Base64 encoding
+  * File hash cache
+  * incremental load
+  * Compression combined
+  * Time traveling debugger
+  * Unidirectional data flow
+  * ...
+
+
+### How
+> React-workflow is a large SPA
 > boilerplate for web development built on top of Facebook's
 > [React](https://facebook.github.io/react/) library,use
 > [redux](https://github.com/rackt/redux) architecture,
