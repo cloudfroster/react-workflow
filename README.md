@@ -2,7 +2,8 @@
 
 ### Why
 ```
-  Large SPA application is hard to design, because a lot of things to consider, the boilerplate had solved the difficulty for you:
+  Large SPA application is hard to design, because a lot of things to consider
+  The boilerplate had solved the difficulty for you:
   
   > ES6
   > Modular
@@ -15,6 +16,8 @@
   > Time traveling debugger
   > Unidirectional data flow
   > ...
+  
+  
 ```
 
 ### How
