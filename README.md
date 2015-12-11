@@ -1,16 +1,18 @@
 ## React-workflow
 
-> React-workflow is an opinionated
+> React-workflow is a big SPA
 > boilerplate for web development built on top of Facebook's
-> [React](https://facebook.github.io/react/) library,
-> [Node.js](https://nodejs.org/) / [Express](http://expressjs.com/) server
-> and [redux](https://github.com/rackt/redux) architecture. Containing
-> modern web development tools such as [Webpack](http://webpack.github.io/),
-> [Babel](http://babeljs.io/) and [BrowserSync](http://www.browsersync.io/).
-> [gh-pages](https://github.com/tschaub/gh-pages) to deploy site to git branch.
-> Helping you to stay productive following the best practices. A solid starting
-> point for both professionals and newcomers to the industry.
-> not a isomorphic application.
+> [React](https://facebook.github.io/react/) library,use
+> [redux](https://github.com/rackt/redux) architecture,
+> [react-router]()
+> [Node.js](https://nodejs.org/) / [Express](http://expressjs.com/) server.
+> Containing modern web development tools such as [Webpack](http://webpack.github.io/),
+> [Babel](http://babeljs.io/) and [BrowserSync](http://www.browsersync.io/),
+> [nodemon](https://github.com/remy/nodemon) and
+> [gh-pages](https://github.com/tschaub/gh-pages) to deploy your site to git branch.
+> Helping you make site faster and modern. 
+> For beginner and professional developer provide the starting point of a professional high-level react boilerplate.
+> This is not a isomorphic application (′⌒`).
 
 ### Getting Started
 
@@ -24,7 +26,10 @@ $ npm start
 ### other commder
 
 ```shell
-$ npm run deploy  (deploy your site to your git `production` branch)
+$ npm run start     (start develop model)
+$ npm run publish   (copy file and publish your site to git `gh-pages` branch)
+$ npm run deploy    (clean bundle server and deploy your application)
+...
 ```
 
 
@@ -32,11 +37,11 @@ $ npm run deploy  (deploy your site to your git `production` branch)
 
 ```
 .
-├── /node_modules/              # 3rd-party libraries and utilities
-├── /build/                     # build files
-├── /client/                    # The source code of the application for client
-├── /server/                    # The source code of express server
-├── /tasks/                     # Build automation scripts and utilities
+├── /node_modules/               # 3rd-party libraries and utilities
+├── /build/                      # build files
+├── /client/                     # The source code of the application for client
+├── /server/                     # The source code of express server
+├── /tasks/                      # Build automation scripts and utilities
 │   ├── /bundle.js              # Bundles the web resources into package(s) through Webpack
 │   ├── /clean.js               # Cleans up the output (build) folder
 │   ├── /webpack.config.js      # Webpack configuration for application bundles
@@ -45,8 +50,8 @@ $ npm run deploy  (deploy your site to your git `production` branch)
 │   └── /publish.js             # deploy build files to git branch
 │   └── /browserSync.js         # browserSync tools and webpack middleware
 │   └── /start.js               # Launches the development web server with "live reload"
-│── package.json                # The list of 3rd party libraries and utilities
-└── processes.json              # production settings for PM2
+│── package.json                 # The list of 3rd party libraries and utilities
+└── processes.json               # production settings for PM2
 ```
 
 
@@ -60,6 +65,10 @@ $ npm run deploy  (deploy your site to your git `production` branch)
   * [The Future of React](https://github.com/reactjs/react-future)
   * [Learn ES6](https://babeljs.io/docs/learn-es6/)
   * [ES6 Features](https://github.com/lukehoban/es6features#readme)
+
+### Make it better
+  * if you find bug or have new feature requirements, please let me know
+  * welcome PR
 
 ### Support
 
