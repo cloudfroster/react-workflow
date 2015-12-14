@@ -1,14 +1,13 @@
 import {combineReducers} from 'redux'
 import {routerStateReducer as router} from 'redux-router'
 import user from './user'
-import dashboard from '../route/dashboard/reducers'
 
-const rootReducer = combineReducers({
+const rootCombineReducer = window.rootCombineReducer = {
   router,
   user,
-  dashboard,
-})
+}
 
+const rootReducer = combineReducers(rootCombineReducer)
 
 export default rootReducer
 module.exports = rootReducer

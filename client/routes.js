@@ -6,7 +6,7 @@ const routes = {
   childRoutes: [
     {
       onEnter() {
-        console.log('认证')
+        console.log('Authentication')
       },
       component: App,
       childRoutes,

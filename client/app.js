@@ -4,29 +4,34 @@ import normalize from 'normalize.css'
 import base from './theme/base.less'
 import {Provider} from 'react-redux'
 import {ReduxRouter} from 'redux-router'
-import { DevTools, DebugPanel, LogMonitor } from 'redux-devtools/lib/react'
 import configureStore from './store/configureStore'
 
 const store = window.store = configureStore()
 
-ReactDOM.render((
-  <div>
+if(process.env.NODE_ENV === 'development') {
+  const DevTools = require('./containers/DevTools');
+  ReactDOM.render(
     <Provider store={store}>
-      <ReduxRouter
-                  routes={[]}
-                  location={{}}
-                  params={{}}
-                  components={[]}
-              />
-    </Provider>
-    <DebugPanel top right bottom>
-      <DevTools store={store} monitor={LogMonitor} />
-    </DebugPanel>
-  </div>
-),document.getElementById('app'))
-
-// must accept hot reload
-if(module.hot) {
-  module.hot.accept()
+      <div>
+        <ReduxRouter
+                    routes={[]}
+                    location={{}}
+                    params={{}}
+                    components={[]}
+                />
+        <DevTools />
+      </div>
+    </Provider>,
+    document.getElementById('app'))
+} else {
+  ReactDOM.render(
+  <Provider store={store}>
+    <ReduxRouter
+                routes={[]}
+                location={{}}
+                params={{}}
+                components={[]}
+            />
+  </Provider>,
+  document.getElementById('app'))
 }
-

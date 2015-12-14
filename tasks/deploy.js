@@ -14,7 +14,7 @@ function deploy() {
     yield run(require('./clean'));
     yield run(require('./bundle'));
     yield run(require('./server'));
-    yield run(require('./publish'));
+    //yield run(require('./publish'));
   });
 }
 

@@ -1,7 +1,6 @@
 //-------------------------------------------------------------------------
 //  export webpack config
 //-------------------------------------------------------------------------
-
 const path = require('path');
 const webpack = require('webpack');
 const merge = require('lodash.merge');
