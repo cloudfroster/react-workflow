@@ -7,9 +7,9 @@
 
 # THANKS
 
-    <github, node, npm>
+    <github, node, npm...>
 
 # TECHNOLOGY COLOPHON
 
-    HTML5, CSS3,
-    nodejs, jQuery, Normalize.css, less, babel, webpack
+    react, redux,
+    nodejs, nodemon, Normalize.css, less, babel, webpack

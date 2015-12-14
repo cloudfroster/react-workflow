@@ -1,6 +1,10 @@
-const ghpages = require('gh-pages');
-const path = require('path');
-const fs = require('fs-extra');
+//---------------------------------------------------------------------
+//  publish build folder to github gh-pages branch
+//---------------------------------------------------------------------
+
+const ghpages = require('gh-pages')
+const path = require('path')
+const fs = require('fs-extra')
 
 function publish() {
   return new Promise((reslove, reject) => {
@@ -27,11 +31,11 @@ function publish() {
         reject(err)
       }
       reslove()
-    });
+    })
   })
 }
 
-// copy file to build folder
+// copy pickFiles file to build folder
 function copyFileToBuild() {
 
   const colors = require('colors')
@@ -60,4 +64,4 @@ function copyFileToBuild() {
   })
 }
 
-module.exports = publish;
+module.exports = publish

@@ -1,15 +1,15 @@
 //-------------------------------------------------------------------------
 //  export webpack config
 //-------------------------------------------------------------------------
-const path = require('path');
-const webpack = require('webpack');
-const merge = require('lodash.merge');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+
+const path = require('path')
+const webpack = require('webpack')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 /* const ExtractTextPlugin = require('extract-text-webpack-plugin'); */
 
-const DEBUG = global.DEBUG;
-const VERBOSE = global.VERBOSE;
-const WATCH = global.WATCH;
+const DEBUG = global.DEBUG
+const VERBOSE = global.VERBOSE
+const WATCH = global.WATCH
 
 const AUTOPREFIXER = `{
   browsers: [
@@ -21,11 +21,11 @@ const AUTOPREFIXER = `{
     'Opera >= 12',
     'Safari >= 7.1',
   ],
-}`;
+}`
 const GLOBALS = {
   'process.env.NODE_ENV': DEBUG ? '"development"' : '"production"',
   __DEV__: DEBUG,
-};
+}
 
 //-------------------------------------------------------------------------
 //  Configuration for the client-side bundle (app.js)
@@ -136,4 +136,4 @@ const appConfig = {
 
 };
 
-module.exports = appConfig;
+module.exports = appConfig

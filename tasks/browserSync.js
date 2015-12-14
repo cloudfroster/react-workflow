@@ -1,12 +1,13 @@
-const bs = require('browser-sync').create();
-const webpack = require('webpack');
-const webpackDevMiddleware = require('webpack-dev-middleware');
-const webpackHotMiddleware = require('webpack-hot-middleware');
-/**
- * open browserSync
- */
-const webpackConfig = require('./webpack.config'); // Client-side bundle configuration
-const bundler = webpack(webpackConfig);
+//---------------------------------------------------------------
+//  use browserSync to proxy development server
+//---------------------------------------------------------------
+
+const bs = require('browser-sync').create()
+const webpack = require('webpack')
+const webpackDevMiddleware = require('webpack-dev-middleware')
+const webpackHotMiddleware = require('webpack-hot-middleware')
+const webpackConfig = require('./webpack.config')  // Client-side bundle configuration
+const bundler = webpack(webpackConfig)
 
 function browserSync() {
   return new Promise((reslove, reject) => {
@@ -42,11 +43,11 @@ function browserSync() {
           '!./static/build/**/*.js',
         ],
       });
-      reslove();
+      reslove()
     } catch (e) {
-      reject(e);
+      reject(e)
     }
   });
 }
 
-module.exports = browserSync;
+module.exports = browserSync

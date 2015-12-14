@@ -1,9 +1,10 @@
-const path = require('path');
-const nodemon = require('nodemon');
+//---------------------------------------------------------------------
+//  Launches Node.js/Express web server in a separate (forked) process
+//---------------------------------------------------------------------
 
-/**
- * Launches Node.js/Express web server in a separate (forked) process.
- */
+const path = require('path')
+const nodemon = require('nodemon')
+
 function startNodemon() {
   nodemon({
     "restartable": "rs",
@@ -23,17 +24,17 @@ function startNodemon() {
       "NODE_ENV": "development"
     },
     "ext": "js json"
-  }).on('restart', () => {});
+  }).on('restart', () => {})
 }
 
 function server() {
   function restart() {
-    console.log("App restarted due to:\n'$FILENAME'\" with title \"nodemon\"'");
+    console.log("App restarted due to:\n'$FILENAME'\" with title \"nodemon\"'")
   }
   return new Promise((resolve, reject) => {
-    global.DEBUG ? startNodemon() : require('../server/server.js');
-    resolve();
-  });
+    global.DEBUG ? startNodemon() : require('../server/server.js')
+    resolve()
+  })
 }
 
-module.exports = server;
+module.exports = server
