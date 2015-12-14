@@ -1,5 +1,6 @@
 const initState = {
   time: new Date().toLocaleTimeString(),
+  welcome: 'welcome, this is a large app!, all code is incremental loading.',
 }
 
 function dashboard(state = initState, action) {
@@ -13,7 +14,6 @@ function dashboard(state = initState, action) {
     return state
 
   }
-
 }
 
 export default dashboard

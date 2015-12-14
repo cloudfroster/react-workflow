@@ -4,7 +4,6 @@ import createHistory from 'history/lib/createBrowserHistory'
 import thunk from 'redux-thunk'
 import rootReducer from '../reducers'
 import routes from '../routes'
-import { persistState } from 'redux-devtools'
 
 function configureStore(initState) {
 
@@ -12,7 +11,7 @@ function configureStore(initState) {
 
   if(process.env.NODE_ENV === 'development') {
     //const createLogger = require('redux-logger')
-    const DevTools = require('../containers/DevTools')
+    const allDevTools = require('../containers/DevTools')
     finalCreateStore = compose(
       applyMiddleware(
         thunk,
@@ -22,8 +21,10 @@ function configureStore(initState) {
         routes,
         createHistory,
       }),
-      DevTools.instrument(),
+      allDevTools.DevTools.instrument(),
+      allDevTools.persistState(allDevTools.getDebugSessionKey()),
     )(createStore)
+
   } else {
     finalCreateStore = compose(
       applyMiddleware(thunk),
@@ -39,8 +40,9 @@ function configureStore(initState) {
   if (module.hot) {
     // Enable Webpack hot module replacement for reducers
     module.hot.accept('../reducers', () => {
-      const nextRootReducer = require('../reducers');
-      store.replaceReducer(nextRootReducer);
+      window.rootCombineReducer.user = require('../reducers/user')
+      const nextReducer = combineReducers(window.rootCombineReducer)
+      store.replaceReducer(nextReducer)
     });
   }
 

@@ -12,9 +12,6 @@ class App extends Component {
 
   constructor() {
     super()
-    this.state = {
-      welcome : 'welcome',
-    }
   }
 
   componentWillUnmount() {
@@ -28,11 +25,11 @@ class App extends Component {
 
 	render() {
 
-    const {time} = this.props
+    const {time, welcome} = this.props
 
 		return(
       <div className="dashboard-container">
-        <h1>{this.state.welcome}</h1>
+        <h1>{welcome}</h1>
         <h2>{time}</h2>
         <button className='start-time' onClick={this.clickHandle.bind(this)}>点击开始计时</button>
         {this.props.children}
@@ -45,6 +42,7 @@ class App extends Component {
 App  = connect((state) => {
   return {
     time : state.dashboard.time,
+    welcome : state.dashboard.welcome,
   }
 })(App)
 

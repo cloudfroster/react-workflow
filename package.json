@@ -4,7 +4,7 @@
     "node": ">= 5.0.0",
     "npm": ">= 3.4.0"
   },
-  "version": "1.0.0",
+  "version": "1.0.3",
   "description": "react redux react-router ",
   "main": "start.js",
   "scripts": {

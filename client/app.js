@@ -9,7 +9,7 @@ import configureStore from './store/configureStore'
 const store = window.store = configureStore()
 
 if(process.env.NODE_ENV === 'development') {
-  const DevTools = require('./containers/DevTools');
+  const DevTools = require('./containers/DevTools').DevTools;
   ReactDOM.render(
     <Provider store={store}>
       <div>

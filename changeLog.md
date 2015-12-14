@@ -1,11 +1,19 @@
-# 版本1.0.1 2015/12/11
+# 版本1.0.3 2015/12/14
+* 增量加载reducers
+* 解决热刷新reducers问题(考虑增量加载的情况)
+
+# 版本1.0.2 2015/12/11
+* 升级redux-devtools到3.0.0
+* 启用react-transform插件来热刷新react组件
+
+# 版本1.0.1 2015/12/9
 * 添加eslint和csslint代码风格检测工具
 * 升级代码依赖
 
 # 版本1.0.0(-_-) 2015/12/8
 * 添加greenkeeper来保持最新的npm包依赖
 
-# 版本1.0.0(-_-) 2015/12/8
+# 版本0.0.9(-_-) 2015/12/6
 * 修复html发布的hash问题,采用`html-webpack-plugin`来动态产生html的`link`和`script`标签.
 * 新增发布功能,命令 `npm run deploy`, 这个命令会hash编译文件到build目录,然后把里面的代码发布到本仓库的`production`分支.(可在`tasks/publish.js`里面配置)
 

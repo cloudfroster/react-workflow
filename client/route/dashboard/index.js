@@ -16,3 +16,12 @@ module.exports = {
     })
   },
 }
+
+if (module.hot) {
+  // Enable Webpack hot module replacement for reducers
+  module.hot.accept('./reducers', () => {
+    window.rootCombineReducer.dashboard = require('./reducers')
+    const nextReducer = combineReducers(window.rootCombineReducer)
+    window.store.replaceReducer(nextReducer)
+  });
+}
