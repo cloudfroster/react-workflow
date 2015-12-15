@@ -30,7 +30,7 @@ function browserSync() {
               // http://webpack.github.io/docs/webpack-dev-middleware.html
             }),
 
-            // bundler should be the same as above
+            // bundler should be the same as webpackDevMiddleware's bundler
             webpackHotMiddleware(bundler),
           ],
         },
@@ -38,16 +38,16 @@ function browserSync() {
         // no need to watch '*.js' here, webpack will take care of it for us,
         // including full page reloads if HMR won't work
         files: [
-          './static/**/*.css',
-          './static/**/*.html',
-          '!./static/build/**/*.js',
+          './build/**/*.css',
+          './build/**/*.html',
+          '!./build/**/*.js',
         ],
-      });
-      reslove()
-    } catch (e) {
+    })
+    reslove()
+  } catch (e) {
       reject(e)
     }
-  });
+  })
 }
 
 module.exports = browserSync

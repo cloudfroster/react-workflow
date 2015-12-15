@@ -1,49 +1,84 @@
-/**
- * set up express server at localhost:5000
- */
-var colors = require('colors');
-var express =require('express');
-var logger =require('morgan');
-var cookieParser =require('cookie-parser');
-var bodyParser =require('body-parser');
-var path =require('path');
+//---------------------------------------------------------------------
+//  use json-server set up express mock server at localhost:5000
+//---------------------------------------------------------------------
+const path = require('path')
+const colors = require('colors')
+const logger = require('morgan')
+const express = require('express')
+const cookieParser = require('cookie-parser')
+const bodyParser = require('body-parser')
+const jsonServer = require('json-server')
+const http = require('http')
+const app = express()
+const server = http.createServer(app)
+//-------------------------------------------------------------------
+//  set up virtual remote server proxy
+//-------------------------------------------------------------------
+const httpProxy = require('http-proxy')
+const isProxy = false
+const config = {
+  apiHost: 'localhost',
+  apiPort: 5001,
+}
+const proxy = httpProxy.createProxyServer({
+  target: `http://${config.apiHost}:${config.apiPort}`,
+  ws: true,
+})
+if(isProxy) {
+  // start remote server
+  require('./remote/remoteServer')
+  app.all(/^\/api/, (req, res) => {
+    proxy.web(req, res)
+  })
+  // Listen for the `error` event on `proxy`.
+  proxy.on('error', function (err, req, res) {
+    res.writeHead(500, {
+      'Content-Type': 'text/plain'
+    })
 
-const app = express();
-
-app.set('port', (process.env.PORT || 5000));
-app.set('env', 'development');
+    res.end('Something went wrong. The http-proxy has shut down')
+  })
+  console.log(`The proxy server to proxy '/api' at http://${config.apiHost}:${config.apiPort}`)
+} else {
+  app.use('/api', jsonServer.router(path.join(__dirname, './api/mock.json')))
+}
+//-------------------------------------------------------------------
+//  end
+//-------------------------------------------------------------------
+app.set('port', (process.env.PORT || 5000))
+app.set('env', 'development')
 
 // static file
-app.use(express.static(path.join(__dirname, '../build')));
+app.use(express.static(path.join(__dirname, '../build')))
 
 // express middleware
-app.use(logger('dev'));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(cookieParser());
+app.use(logger('dev'))
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({ extended: false }))
+app.use(cookieParser())
 
 // development error handler will print stacktrace
 if (app.get('env') === 'development') {
   app.use(function(err, req, res, next) {
-    res.status(err.status || 500);
+    res.status(err.status || 500)
     res.render('error', {
       message: err.message,
       error: err
-    });
-  });
+    })
+  })
 }
 
 // jump to index.html
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../build/index.html'));
-});
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, '../build/index.html'))
+})
 
 
 // start server
-app.listen(app.get('port'), () => {
+server.listen(app.get('port'), () => {
   /* eslint-disable no-console */
-  console.log(`The server is running at http://localhost:${app.get('port')}`.cyan);
+  console.log(`The server is running at http://localhost:${app.get('port')}`.cyan)
   if (process.send) {
-    process.send('online');
+    process.send('online')
   }
-});
+})

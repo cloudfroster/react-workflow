@@ -16,7 +16,7 @@ function deploy() {
     yield run(require('./bundle'))
     yield run(require('./server'))
     /* yield run(require('./publish')) */
-  });
+  })
 }
 
 module.exports =  deploy

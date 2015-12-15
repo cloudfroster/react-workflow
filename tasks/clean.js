@@ -12,7 +12,7 @@ function clean() {
   	}catch(e) {
   		reject(e)
   	}
-  });
+  })
 }
 
 module.exports = clean

@@ -40,6 +40,7 @@ const appConfig = {
 
   output: {
     path: path.join(__dirname, '../build'),
+    // if your want to cdn, just change here
     publicPath: '/',
     sourcePrefix: '',
     trunkFilename: DEBUG ? '[id].bundle.js' : '[id].[chunkhash].bundle.js',
@@ -60,6 +61,7 @@ const appConfig = {
     new HtmlWebpackPlugin({
       filename: 'index.html',
       inject: true,
+      // see issue https://github.com/ampedandwired/html-webpack-plugin/issues/128
       template: 'html?removeOptionalTags=false!./client/index.html',
       favicon: './client/favicon.ico',
     }),
@@ -94,7 +96,7 @@ const appConfig = {
   module: {
     loaders: [
       {
-        test: /\.jsx?$/,
+        test: /\.js$/,
         exclude: /(node_modules)/,
         loader: 'babel-loader',
       }, {
@@ -105,7 +107,7 @@ const appConfig = {
         loader: 'raw-loader',
       }, {
         test: /\.(png|jpg|jpeg|gif|svg|woff|woff2)$/,
-        loader: 'url-loader?limit=10000',  // 10kb
+        loader: 'url-loader?limit=5000',  // 5kb
       }, {
         test: /\.(eot|ttf|wav|mp3)$/,
         loader: 'file-loader',
@@ -134,6 +136,6 @@ const appConfig = {
     cachedAssets: VERBOSE,
   },
 
-};
+}
 
 module.exports = appConfig
