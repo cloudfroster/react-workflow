@@ -15,4 +15,3 @@ function user(state = initState, action) {
 }
 
 export default user
-module.exports = user

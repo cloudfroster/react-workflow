@@ -36,6 +36,9 @@
 ### Getting Started
 
 Just clone the repo and run :
+
+> Note: your node version need >= 5.0.0
+
 ```shell
 $ npm install
 ...

@@ -2,7 +2,7 @@ import React, { PropTypes, Component } from 'react'
 import style from './App.less'
 import Nav from '../Nav'
 
-export default class App extends Component {
+class App extends Component {
 
 	static propTypes = {
 	}
@@ -18,4 +18,4 @@ export default class App extends Component {
 
 }
 
-module.exports = App
+export default App

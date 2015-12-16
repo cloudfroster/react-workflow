@@ -1,6 +1,6 @@
 import React, { PropTypes, Component } from 'react'
 
-export default class SignIn extends Component {
+class SignIn extends Component {
 
   static propTypes = {
 
@@ -26,4 +26,4 @@ export default class SignIn extends Component {
 
 }
 
-module.exports = SignIn
+export default SignIn

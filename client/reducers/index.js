@@ -10,4 +10,3 @@ const rootCombineReducer = window.rootCombineReducer = {
 const rootReducer = combineReducers(rootCombineReducer)
 
 export default rootReducer
-module.exports = rootReducer

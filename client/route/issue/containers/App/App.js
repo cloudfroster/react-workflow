@@ -3,7 +3,7 @@ import {
   Issue1,
 } from '../../components'
 
-export default class App extends Component {
+class App extends Component {
 
 	static propTypes = {
 	}
@@ -18,4 +18,4 @@ export default class App extends Component {
 
 }
 
-module.exports = App
+export default App

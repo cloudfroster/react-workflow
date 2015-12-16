@@ -18,4 +18,3 @@ const childRoutes = [
 ]
 
 export default childRoutes
-module.exports = childRoutes

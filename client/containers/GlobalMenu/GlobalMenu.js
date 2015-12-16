@@ -57,4 +57,4 @@ GlobalMenu = connect((state) => {
   }
 })(GlobalMenu)
 
-module.exports = GlobalMenu
+export default GlobalMenu

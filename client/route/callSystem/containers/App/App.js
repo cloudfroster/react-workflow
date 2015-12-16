@@ -1,6 +1,6 @@
 import React, { PropTypes, Component } from 'react'
 
-export default class App extends Component {
+class App extends Component {
 
 	static propTypes = {
 	}
@@ -16,4 +16,4 @@ export default class App extends Component {
 
 }
 
-module.exports = App
+export default App

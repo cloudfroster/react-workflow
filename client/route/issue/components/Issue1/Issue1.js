@@ -1,7 +1,7 @@
 import React, { PropTypes, Component } from 'react'
 import style from './Issue1.less'
 
-export default class Issue1 extends Component {
+class Issue1 extends Component {
 
 	static propTypes = {
 
@@ -32,4 +32,4 @@ export default class Issue1 extends Component {
 
 }
 
-module.exports = Issue1
+export default Issue1

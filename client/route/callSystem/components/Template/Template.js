@@ -2,7 +2,7 @@ import React, { PropTypes, Component } from 'react'
 import { Motion, spring } from 'react-motion'
 import style from './Template.less'
 
-export default class Template extends Component {
+class Template extends Component {
 
 	static propTypes = {
 
@@ -31,4 +31,4 @@ export default class Template extends Component {
 
 }
 
-module.exports = Template
+export default Template

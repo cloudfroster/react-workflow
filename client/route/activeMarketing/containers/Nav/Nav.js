@@ -27,4 +27,4 @@ class Nav extends Component {
   }
 }
 
-module.exports = Nav
+export default Nav

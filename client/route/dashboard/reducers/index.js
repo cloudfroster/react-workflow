@@ -17,4 +17,3 @@ function dashboard(state = initState, action) {
 }
 
 export default dashboard
-module.exports = dashboard

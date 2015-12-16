@@ -47,4 +47,3 @@ App  = connect((state) => {
 })(App)
 
 export default App
-module.exports = App

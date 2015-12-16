@@ -23,4 +23,4 @@ class A extends Component {
   }
 }
 
-module.exports = A
+export default A
