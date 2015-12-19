@@ -45,7 +45,7 @@ $ npm install
 $ npm start
 ```
 
-### other commder
+### Other Commands
 
 ```shell
 $ npm run lint      (lint your js files)
@@ -65,14 +65,14 @@ $ npm run deploy    (clean bundle server and deploy your application)
 ├── /client/                     # The source code of the application for client
 ├── /server/                     # The source code of express server
 ├── /tasks/                      # Build automation scripts and utilities
-│   ├── /bundle.js              # Bundles the web resources into package(s) through Webpack
-│   ├── /clean.js               # Cleans up the output (build) folder
-│   ├── /webpack.config.js      # Webpack configuration for application bundles
-│   ├── /server.js              # Launches the Node.js/Express web server
-│   └── /deploy.js              # bundle and deploy build files to git branch
-│   └── /publish.js             # deploy build files to git branch
-│   └── /browserSync.js         # browserSync tools and webpack middleware
-│   └── /start.js               # Launches the development web server with "live reload"
+│   ├── /bundle.js               # Bundles the web resources into package(s) through Webpack
+│   ├── /clean.js                # Cleans up the output (build) folder
+│   ├── /webpack.config.js       # Webpack configuration for application bundles
+│   ├── /server.js               # Launches the Node.js/Express web server
+│   └── /deploy.js               # bundle and deploy build files to git branch
+│   └── /publish.js              # deploy build files to git branch
+│   └── /browserSync.js          # browserSync tools and webpack middleware
+│   └── /start.js                # Launches the development web server with "live reload"
 │── package.json                 # The list of 3rd party libraries and utilities
 └── processes.json               # production settings for PM2
 ```
@@ -90,7 +90,8 @@ $ npm run deploy    (clean bundle server and deploy your application)
   * [ES6 Features](https://github.com/lukehoban/es6features#readme)
   * [Css Modules](https://github.com/css-modules/css-modules)
   
-### Make it better
+### Make Better
+
   * if you find bug or have new feature requirements, please let me know
   * welcome PR
 
