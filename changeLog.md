@@ -76,5 +76,5 @@ class Button extends Component {
   }
 }
 
-2. 如果用上面的,回报出错误''this' is not allowed before super()'. 解决方法还未知.建议还是在调用方法的时候,加上bind函数.
+2. 如果用上面的,回报出错误''this' is not allowed before super()'. 解决方法是因为babel 6插件`babel-plugin-transform-class-constructor-call`没有安装.
 ```

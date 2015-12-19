@@ -1,6 +1,9 @@
 {
 	"presets": ["react", "stage-0", "es2015"],
-	"plugins": ["transform-class-properties", "transform-object-assign"],
+	"plugins": ["transform-class-properties",
+              "transform-object-assign",
+              "transform-class-constructor-call",
+              "transform-decorators"],
   "env": {
     "development": {
       "plugins": [
