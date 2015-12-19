@@ -21,6 +21,7 @@ class App extends Component {
 		return(
       <div className="App">
         <GlobalMenu/>
+        <GlobalMenu/>
         {this.props.children}
       </div>
 		)
@@ -28,8 +29,4 @@ class App extends Component {
 
 }
 
-export default connect((state) => {
-  return {
-    user : state.user,
-  }
-})(App)
+export default App

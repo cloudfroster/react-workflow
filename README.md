@@ -1,8 +1,10 @@
-## React-workflow
+## React-workflow (Data winner version)
+
+##This is data winner version demo code, want to be the latest features, please click the master branch, the latest, the most interesting features are reflected here.
 
 ### Why
 ```
-  Large SPA application is hard to design, because a lot of things to consider
+  Large SPA application is hard to design, because a lot of things need to consider
   The boilerplate had solved the difficulty for you:
   
   > ES6
@@ -80,15 +82,16 @@ $ npm run deploy    (clean bundle server and deploy your application)
 
 ### Learn More
 
-  * [Getting Started with React.js](http://facebook.github.io/react/)
   * [React.js Questions on StackOverflow](http://stackoverflow.com/questions/tagged/reactjs)
   * [React.js Discussion Board](https://discuss.reactjs.org/)
+  * [Getting Started with React.js](http://facebook.github.io/react/)
   * [Flux Architecture for Building User Interfaces](http://facebook.github.io/flux/)
   * [Flow - A static type checker for JavaScript](http://flowtype.org/)
   * [The Future of React](https://github.com/reactjs/react-future)
   * [Learn ES6](https://babeljs.io/docs/learn-es6/)
   * [ES6 Features](https://github.com/lukehoban/es6features#readme)
-
+  * [Css Modules](https://github.com/css-modules/css-modules)
+  
 ### Make it better
   * if you find bug or have new feature requirements, please let me know
   * welcome PR

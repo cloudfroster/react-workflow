@@ -1,3 +1,4 @@
+# Change Log
 # 版本1.0.3 2015/12/14
 * 增量加载reducers
 * 解决热刷新reducers问题(考虑增量加载的情况)
