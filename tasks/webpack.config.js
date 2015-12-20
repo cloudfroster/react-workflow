@@ -22,9 +22,13 @@ const AUTOPREFIXER = `{
     'Safari >= 7.1',
   ],
 }`
+
+// for babel and other tool env
+process.env.NODE_ENV = DEBUG ? 'development' : 'production'
+
 const GLOBALS = {
-  'process.env.NODE_ENV': DEBUG ? '"development"' : '"production"',
   __DEV__: DEBUG,
+  __PRO__: !DEBUG,
 }
 
 //-------------------------------------------------------------------------

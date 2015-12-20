@@ -9,7 +9,7 @@ function configureStore(initState) {
 
   let finalCreateStore;
 
-  if(process.env.NODE_ENV === 'development') {
+  if(__DEV__) {
     //const createLogger = require('redux-logger')
     const allDevTools = require('../containers/DevTools')
     finalCreateStore = compose(

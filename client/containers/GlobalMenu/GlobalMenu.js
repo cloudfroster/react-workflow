@@ -26,17 +26,17 @@ class GlobalMenu extends Component {
               <img src={require('./logo.png')} alt="logo" title="logo"/>
             </li>
             <li><Link to="/" activeClassName='GlobalMenu-active'>首页</Link></li>
-            <li><Link to="/issue">react常见问题</Link></li>
+            <li><Link to="/issue" activeClassName='GlobalMenu-active'>react常见问题</Link></li>
             <li><Link to="/customerInsight" activeClassName='GlobalMenu-active'>客户洞察</Link></li>
             <li><Link to="/activeMarketing" activeClassName='GlobalMenu-active'>主动营销</Link></li>
             <li><Link to="/joinMarketing" activeClassName='GlobalMenu-active'>联合营销</Link></li>
             <li><Link to="/contentManagement" activeClassName='GlobalMenu-active'>内容管理</Link></li>
-            <li><Link to="/loyaltyManagement">忠诚度管理</Link></li>
-            <li><Link to="/precisionAdvertising">精准广告</Link></li>
-            <li><Link to="/orderCenter">订单中心</Link></li>
-            <li><Link to="/serviceCenter">客服中心</Link></li>
-            <li><Link to="/callSystem">呼叫系统</Link></li>
-            <li><Link to="/dataManagement">数据管理</Link></li>
+            <li><Link to="/loyaltyManagement" activeClassName='GlobalMenu-active'>忠诚度管理</Link></li>
+            <li><Link to="/precisionAdvertising" activeClassName='GlobalMenu-active'>精准广告</Link></li>
+            <li><Link to="/orderCenter" activeClassName='GlobalMenu-active'>订单中心</Link></li>
+            <li><Link to="/serviceCenter" activeClassName='GlobalMenu-active'>客服中心</Link></li>
+            <li><Link to="/callSystem" activeClassName='GlobalMenu-active'>呼叫系统</Link></li>
+            <li><Link to="/dataManagement" activeClassName='GlobalMenu-active'>数据管理</Link></li>
           </ul>
         </div>
         <div className="GlobalMenu-right">
@@ -53,6 +53,7 @@ class GlobalMenu extends Component {
 
 GlobalMenu = connect((state) => {
   return {
+    router: state.router,
     user: state.user,
   }
 })(GlobalMenu)
