@@ -2,33 +2,13 @@
  * inclued all childRoutes, Array Type
  */
 import dashboard from './dashboard'
-import issue from './issue'
-import customerInsight from './customerInsight'
-import activeMarketing from './activeMarketing'
-import joinMarketing from './joinMarketing'
-import contentManagement from './contentManagement'
-import loyaltyManagement from './loyaltyManagement'
-import precisionAdvertising from './precisionAdvertising'
-import orderCenter from './orderCenter'
-import serviceCenter from './serviceCenter'
-import callSystem from './callSystem'
-import dataManagement from './dataManagement'
-import changePassword from './changePassword'
+import user from './user'
+import setting from './setting'
 
 const childRoutes = [
   dashboard,
-  issue,
-  customerInsight,
-  activeMarketing,
-  joinMarketing,
-  contentManagement,
-  loyaltyManagement,
-  precisionAdvertising,
-  orderCenter,
-  serviceCenter,
-  callSystem,
-  dataManagement,
-  changePassword,
+  user,
+  setting,
 ]
 
 export default childRoutes

@@ -1,49 +1,29 @@
 @import '../../theme/variable.less';
 
 .GlobalMenu {
-  .clearfix;
-  background-color: #FF6387;
-  .GlobalMenu-left {
-    float: left;
-    ul {
-      li {
-        vertical-align: middle;
-        display: inline-block;
-        a {
-          font-style: 18px;
-          padding: 10px;
-          color: #ffffff;
-          &:hover {
-            color: #0984A0;
-          }
-        }
-        .GlobalMenu-active {
-          color: #FF6387;
-          background-color: #ffffff;
-        }
-      }
-    }
+  position: fixed;
+  width: 50px;
+  height: 100%;
+  background-color: @site-black-color;
+  .icon.GlobalMenu-active {
+    background-color: @site-light-blue-color;
   }
-  .GlobalMenu-right {
-    float: right;
-    ul {
-      margin-top: 18px;
-      li {
-        vertical-align: middle;
-        display: inline-block;
-        a {
-          font-style: 18px;
-          padding: 10px;
-          color: #4A4A4A;
-          &:hover {
-            color: #0984A0;
-          }
-        }
-      }
-    }
+  .icon {
+    display: block;
+    width: 100%;
+    height: 60px;
+    color: white;
   }
-  .GlobalMenu-userName {
-    padding: 0 10px;
-    color: #B35411;
+  .dashboard {
+    background: url('./iconfont-dashboard.svg') no-repeat center center transparent;
+    background-size: 55%;
+  }
+  .user {
+    background: url('./iconfont-user.svg') no-repeat center center transparent;
+    background-size: 55%;
+  }
+  .setting {
+    background: url('./iconfont-setting.svg') no-repeat center center transparent;
+    background-size: 55%;
   }
 }

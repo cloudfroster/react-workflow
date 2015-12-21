@@ -1,12 +1,17 @@
-.dashboard-container {
-  text-align: center;
-}
-.start-time {
-  display: inline-block;
-  color: white;
-  border: 0;
-  padding: 10px;
-  border-radius: 2px;
-  background-color: #654B4B;
-}
+@import '../../../../theme/variable.less';
 
+.dashboard-container {
+  padding: @site-padding;
+  .dashboard-banner {
+    padding: @site-weight-padding;
+    background-color: @site-blue-color;
+  }
+  .dashboard-tip {
+    font-size: 1.2rem;
+    color: @site-light-white-color;
+  }
+  .dashboard-title {
+    font-size: 2rem;
+    color: @site-white-color;
+  }
+}

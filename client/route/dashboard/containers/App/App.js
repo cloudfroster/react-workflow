@@ -1,4 +1,5 @@
 import React, { PropTypes, Component } from 'react'
+import {Link, IndexLink} from 'react-router'
 import {connect} from 'react-redux'
 import style from './App.less'
 
@@ -29,10 +30,10 @@ class App extends Component {
 
 		return(
       <div className="dashboard-container">
-        <h1>{welcome}</h1>
-        <h2>{time}</h2>
-        <button className='start-time' onClick={this.clickHandle.bind(this)}>点击开始计时</button>
-        {this.props.children}
+        <div className="dashboard-banner">
+          <div className="dashboard-tip">welcome</div>
+          <div className="dashboard-title">DASHBOARD</div>
+        </div>
       </div>
 		)
 	}

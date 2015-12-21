@@ -7,7 +7,7 @@ import routes from '../routes'
 
 function configureStore(initState) {
 
-  let finalCreateStore;
+  let finalCreateStore
 
   if(__DEV__) {
     //const createLogger = require('redux-logger')
@@ -43,7 +43,7 @@ function configureStore(initState) {
       window.rootCombineReducer.user = require('../reducers/user')
       const nextReducer = combineReducers(window.rootCombineReducer)
       store.replaceReducer(nextReducer)
-    });
+    })
   }
 
   return store
