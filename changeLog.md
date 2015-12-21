@@ -1,7 +1,7 @@
 # Change Log
 # 版本1.0.4    (2015/12/21)
 * 修复bundle会在console里面打印2次的问题
-* 切换主题
+* 开发的时候使用style-loader,而发布的时候单独提取css文件
 
 # 版本1.0.3    (2015/12/14)
 * 增量加载reducers
