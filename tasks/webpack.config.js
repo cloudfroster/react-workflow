@@ -9,6 +9,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 const DEBUG = global.DEBUG
 const VERBOSE = global.VERBOSE
+const BUNDLE = global.BUNDLE
 const WATCH = global.WATCH
 
 const AUTOPREFIXER = `{
@@ -60,18 +61,18 @@ const appConfig = {
   plugins: [
 
     new ExtractTextPlugin(DEBUG ? 'app.css' : '[chunkhash].app.css', {
-      disable: true,
+      disable: DEBUG ? true : false,
       allChunks: true,
     }),
 
     // create index.html
-    new HtmlWebpackPlugin({
+    ...(BUNDLE ? [new HtmlWebpackPlugin({
       filename: 'index.html',
       inject: true,
       // see issue https://github.com/ampedandwired/html-webpack-plugin/issues/128
       template: 'html?removeOptionalTags=false!./client/index.html',
       favicon: './client/favicon.ico',
-    }),
+    })] : []),
 
     new webpack.optimize.OccurenceOrderPlugin(),
 
@@ -120,10 +121,10 @@ const appConfig = {
         loader: 'file-loader',
       }, {
         test: /\.css/,
-        loader: ExtractTextPlugin.extract('style-loader!css-loader?' + (DEBUG ? 'sourceMap' : '') + `!autoprefixer-loader?${AUTOPREFIXER}`),
+        loader: ExtractTextPlugin.extract('style-loader', 'css-loader?' + (DEBUG ? 'sourceMap' : '') + `!autoprefixer-loader?${AUTOPREFIXER}`),
       }, {
         test: /\.less$/,
-        loader: ExtractTextPlugin.extract('style-loader!css-loader?' + (DEBUG ? 'sourceMap' : '') + `!autoprefixer-loader?${AUTOPREFIXER}!less-loader`),
+        loader: ExtractTextPlugin.extract('style-loader', 'css-loader?' + (DEBUG ? 'sourceMap' : '') + `!autoprefixer-loader?${AUTOPREFIXER}!less-loader?` + (DEBUG ? 'sourceMap' : '')),
       },
     ],
   },
