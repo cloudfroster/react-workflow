@@ -3,14 +3,12 @@
 //  ready to be used in a browser
 //---------------------------------------------------------------------
 
-'use strict';
 const webpack = require('webpack')
 const webpackConfig = require('./webpack.config')
 
 function bundle() {
   return new Promise((resolve, reject) => {
     const bundler = webpack(webpackConfig)
-    let bundlerRunCount = 0
 
     function onComplete(err, stats) {
       if (err) {
@@ -26,7 +24,7 @@ function bundle() {
     } else {
       bundler.run(onComplete)
     }
-  });
+  })
 }
 
 module.exports = bundle

@@ -23,8 +23,14 @@ function browserSync() {
               // provide publicPath by ourselves
               publicPath: webpackConfig.output.publicPath,
 
+              // display nothing to the console
+              quiet: true,
+
               // Pretty colored output
               stats: webpackConfig.stats,
+
+              // display no info to console (only warnings and errors)
+              noInfo: true,
 
               // For other settings see
               // http://webpack.github.io/docs/webpack-dev-middleware.html

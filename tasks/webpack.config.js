@@ -5,7 +5,7 @@
 const path = require('path')
 const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-/* const ExtractTextPlugin = require('extract-text-webpack-plugin'); */
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 const DEBUG = global.DEBUG
 const VERBOSE = global.VERBOSE
@@ -59,7 +59,10 @@ const appConfig = {
 
   plugins: [
 
-    /* new ExtractTextPlugin("style.css"), */
+    new ExtractTextPlugin(DEBUG ? 'app.css' : '[chunkhash].app.css', {
+      disable: true,
+      allChunks: true,
+    }),
 
     // create index.html
     new HtmlWebpackPlugin({
@@ -117,10 +120,10 @@ const appConfig = {
         loader: 'file-loader',
       }, {
         test: /\.css/,
-        loader: 'style-loader!css-loader?' + (DEBUG ? 'sourceMap' : '') + `!autoprefixer-loader?${AUTOPREFIXER}`,
+        loader: ExtractTextPlugin.extract('style-loader!css-loader?' + (DEBUG ? 'sourceMap' : '') + `!autoprefixer-loader?${AUTOPREFIXER}`),
       }, {
         test: /\.less$/,
-        loader: 'style-loader!css-loader?' + (DEBUG ? 'sourceMap' : '') + `!autoprefixer-loader?${AUTOPREFIXER}!less-loader`,
+        loader: ExtractTextPlugin.extract('style-loader!css-loader?' + (DEBUG ? 'sourceMap' : '') + `!autoprefixer-loader?${AUTOPREFIXER}!less-loader`),
       },
     ],
   },
