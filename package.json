@@ -99,7 +99,7 @@
     "react-dom": "^0.14.2",
     "react-mixin": "^3.0.3",
     "react-motion": "^0.3.1",
-    "react-redux": "^4.0.2",
+    "react-redux": "^4.0.3",
     "react-router": "^1.0.2",
     "redux": "^3.0.4",
     "redux-router": "^1.0.0-beta5",
