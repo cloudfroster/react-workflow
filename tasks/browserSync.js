@@ -45,7 +45,6 @@ function browserSync() {
         // including full page reloads if HMR won't work
         files: [
           './build/**/*.css',
-          './build/**/*.html',
           '!./build/**/*.js',
         ],
     })
