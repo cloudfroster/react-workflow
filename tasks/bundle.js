@@ -3,10 +3,8 @@
 //  ready to be used in a browser
 //---------------------------------------------------------------------
 
-global.BUNDLE = true
 const webpack = require('webpack')
 const webpackConfig = require('./webpack.config')
-global.BUNDLE = false
 
 function bundle() {
   return new Promise((resolve, reject) => {

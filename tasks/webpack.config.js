@@ -9,7 +9,6 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 const DEBUG = global.DEBUG
 const VERBOSE = global.VERBOSE
-const BUNDLE = global.BUNDLE
 const WATCH = global.WATCH
 
 const AUTOPREFIXER = `{
@@ -66,13 +65,13 @@ const appConfig = {
     }),
 
     // create index.html
-    ...(BUNDLE ? [new HtmlWebpackPlugin({
+    new HtmlWebpackPlugin({
       filename: 'index.html',
       inject: true,
       // see issue https://github.com/ampedandwired/html-webpack-plugin/issues/128
       template: 'html?removeOptionalTags=false!./client/index.html',
       favicon: './client/favicon.ico',
-    })] : []),
+    }),
 
     new webpack.optimize.OccurenceOrderPlugin(),
 
