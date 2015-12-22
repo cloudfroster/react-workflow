@@ -47,7 +47,7 @@
     "browser-sync": "^2.10.0",
     "co": "^4.6.0",
     "colors": "^1.1.2",
-    "css-loader": "^0.23.0",
+    "css-loader": "^0.23.1",
     "csslint": "^0.10.0",
     "del": "^2.1.0",
     "eslint": "^1.10.3",
