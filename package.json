@@ -64,7 +64,7 @@
     "less": "^2.5.3",
     "less-loader": "^2.2.2",
     "nodemon": "^1.8.1",
-    "pretty-error": "^1.2.0",
+    "pretty-error": "^2.0.0",
     "query-string": "^3.0.0",
     "raw-loader": "^0.5.1",
     "react-document-meta": "^2.0.0",
