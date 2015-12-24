@@ -48,7 +48,7 @@
 * 等待react-router升级,目前采用history@1.13.1
 * 等待redux-router修复初始化警告bug
 * <del>做mock数据的处理</del>(采用json-server来mock数据，采用node-proxy来代理远端的API)
-* 编写通用组件
+* 编写通用组件 (developing)
 * demo网站样式从数据赢家迁移到通用网站样式
 
 

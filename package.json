@@ -17,6 +17,7 @@
     "publish": "node tasks/run publish",
     "deploy": "node tasks/run deploy",
     "server": "node tasks/run server",
+    "startDoc": "node tasks/run startDoc",
     "start": "node tasks/run start"
   },
   "keywords": [
@@ -93,6 +94,7 @@
     "history": "^1.13.1",
     "http-proxy": "^1.12.0",
     "json-server": "^0.8.4",
+    "material-ui": "^0.14.0-rc2",
     "morgan": "^1.6.1",
     "normalize.css": "^3.0.3",
     "react": "^0.14.2",
@@ -101,6 +103,7 @@
     "react-motion": "^0.3.1",
     "react-redux": "^4.0.3",
     "react-router": "^1.0.2",
+    "react-tap-event-plugin": "^0.2.1",
     "redux": "^3.0.4",
     "redux-router": "^1.0.0-beta5",
     "superagent": "^1.4.0"
