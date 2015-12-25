@@ -3,7 +3,7 @@
 	"plugins": ["transform-class-properties",
               "transform-object-assign",
               "transform-class-constructor-call",
-              "transform-decorators"],
+              "transform-decorators-legacy"],
   "env": {
     "development": {
       "plugins": [
