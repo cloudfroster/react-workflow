@@ -61,7 +61,7 @@ const appConfig = {
   plugins: [
 
     new ExtractTextPlugin(DEBUG ? 'app.css' : '[chunkhash].app.css', {
-      disable: DEBUG ? true : false,
+      disable: DEBUG,
       allChunks: true,
     }),
 
