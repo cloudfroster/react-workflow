@@ -98,7 +98,7 @@
     "material-ui": "^0.14.0",
     "morgan": "^1.6.1",
     "normalize.css": "^3.0.3",
-    "react": "^0.14.2",
+    "react": "^0.14.5",
     "react-dom": "^0.14.5",
     "react-mixin": "^3.0.3",
     "react-motion": "^0.3.1",
