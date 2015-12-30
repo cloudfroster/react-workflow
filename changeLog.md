@@ -1,4 +1,7 @@
 # Change Log
+# 版本1.0.6    (2015/12/30)
+* 去除多余的doc捆绑操作
+
 # 版本1.0.5    (2015/12/21)
 * 切换主题为通过cms模板样式
 
@@ -31,14 +34,14 @@
 
 ---------------------------------------------------
 # 已知问题
-* redux-router的activeStyle没有用,初始有用,但是点击后失效,待解决
+* <del>redux-router的activeStyle没有用,初始有用,但是点击后失效,待解决</del>(redux connect连接的组件需要传入router参数,否则会失效,尤其是导航)
 * <del>目前只能热刷新reducers的改变,不能热刷新react组件的改变.(因为react-transform还不支持babel6,等待支持babel6,就替换上去支持组件的热替换了)</del>(版本1.0.3支持)
 * <del>还不支持hash发布.(文件version)</del>(版本1.0.1支持)
 * <del>没有采用同构,而是用的html文件.(打算后面动态产生html文件,从而采用非覆盖式发布代码)</del>(已经动态产生index.html)
 * <del>由于采用了style-loader,发现在chrome浏览器中,大的图片显示不出来.(bug)(压缩发布后问题解决)</del>(chrome浏览器bug)
 * <del>由于采用的style-loader,会在加载dom元素后,在去加载样式,从而样式有延迟.不过只是第一次加载会有延迟.</del>(代码压缩后,解析速度变快,问题解决)
 * 目前增量热刷新需要手动添加module.hot判断语句,不是太方便
-
+* 采用动态创建的index.html文件,在每次捆绑时都会发生变化,导致bs不能动态刷新样式文件.所以采用开发的时候样式写在style里面.发布的时候,样式单独打包.
 
 
 
@@ -49,7 +52,7 @@
 * 等待redux-router修复初始化警告bug
 * <del>做mock数据的处理</del>(采用json-server来mock数据，采用node-proxy来代理远端的API)
 * 编写通用组件 (developing)
-* demo网站样式从数据赢家迁移到通用网站样式
+* <del>demo网站样式从数据赢家迁移到通用网站样式</del>(已完成)
 
 
 

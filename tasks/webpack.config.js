@@ -10,7 +10,6 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const DEBUG = global.DEBUG
 const VERBOSE = global.VERBOSE
 const WATCH = global.WATCH
-const DOC = global.DOC
 
 const AUTOPREFIXER = `{
   browsers: [
@@ -40,7 +39,7 @@ const appConfig = {
 
   entry: [
     ...(WATCH ? ['webpack-hot-middleware/client'] : []),
-    path.join(__dirname, !DOC ? '../client/app.js' : '../doc/app.js'),
+    path.join(__dirname, '../client/app.js'),
   ],
 
   output: {
