@@ -60,7 +60,6 @@ const appConfig = {
   plugins: [
 
     new ExtractTextPlugin(DEBUG ? 'app.css' : '[chunkhash].app.css', {
-      disable: DEBUG,
       allChunks: true,
     }),
 
@@ -70,6 +69,7 @@ const appConfig = {
       inject: true,
       // see issue https://github.com/ampedandwired/html-webpack-plugin/issues/128
       template: 'html?removeOptionalTags=false!./client/index.html',
+      cache: true,
       favicon: './client/favicon.ico',
     }),
 
