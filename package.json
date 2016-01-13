@@ -74,7 +74,7 @@
     "redbox-react": "~1.2.0",
     "redux-devtools": "~3.0.1",
     "redux-devtools-dock-monitor": "~1.0.1",
-    "redux-devtools-log-monitor": "~1.0.1",
+    "redux-devtools-log-monitor": "~1.0.5",
     "redux-logger": "~2.3.2",
     "redux-thunk": "~1.0.3",
     "serialize-javascript": "~1.1.2",
