@@ -4,14 +4,6 @@ import styles from './Header.less'
 
 class Header extends Component {
 
-  static propTypes = {
-
-  }
-
-  static defaultProps = {
-
-  }
-
   constructor(props) {
     super(props)
   }

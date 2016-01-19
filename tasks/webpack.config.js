@@ -4,6 +4,7 @@
 
 const path = require('path')
 const webpack = require('webpack')
+const autoprefixer = require('autoprefixer')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
@@ -120,12 +121,16 @@ const appConfig = {
         loader: 'file-loader',
       }, {
         test: /\.css/,
-        loader: ExtractTextPlugin.extract('style-loader', 'css-loader?' + (DEBUG ? 'sourceMap' : '') + `!autoprefixer-loader?${AUTOPREFIXER}`),
+        loader: ExtractTextPlugin.extract('style-loader', 'css-loader?' + (DEBUG ? 'sourceMap' : '') + `!postcss-loader?${AUTOPREFIXER}`),
       }, {
         test: /\.less$/,
-        loader: ExtractTextPlugin.extract('style-loader', 'css-loader?' + (DEBUG ? 'sourceMap' : '') + `!autoprefixer-loader?${AUTOPREFIXER}!less-loader?` + (DEBUG ? 'sourceMap' : '')),
+        loader: ExtractTextPlugin.extract('style-loader', 'css-loader?' + (DEBUG ? 'sourceMap' : '') + `!postcss-loader?${AUTOPREFIXER}!less-loader?` + (DEBUG ? 'sourceMap' : '')),
       },
     ],
+  },
+
+  postcss: () => {
+    return [autoprefixer]
   },
 
   cache: DEBUG,

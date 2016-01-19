@@ -2,14 +2,6 @@ import React, { PropTypes, Component } from 'react'
 
 class SignIn extends Component {
 
-  static propTypes = {
-
-  }
-
-  static defaultProps = {
-
-  }
-
   constructor(props) {
     super(props)
     this.state = {}

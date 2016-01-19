@@ -2,8 +2,20 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import normalize from 'normalize.css'
 import {Provider} from 'react-redux'
-import {ReduxRouter} from 'redux-router'
+import {Router, Route, browserHistory} from 'react-router'
+import routes from './routes'
+import history from './history'
 import configureStore from './store/configureStore'
+
+class Hello extends React.Component {
+  render() {
+    return(
+      <div>
+        hello world
+      </div>
+    )
+  }
+}
 
 const store = window.store = configureStore()
 
@@ -12,12 +24,7 @@ if(__DEV__) {
   ReactDOM.render(
     <Provider store={store}>
       <div>
-        <ReduxRouter
-                    routes={[]}
-                    location={{}}
-                    params={{}}
-                    components={[]}
-                />
+        <Router history={history} routes={routes} />
         <DevTools />
       </div>
     </Provider>,
@@ -25,12 +32,7 @@ if(__DEV__) {
 } else {
   ReactDOM.render(
   <Provider store={store}>
-    <ReduxRouter
-                routes={[]}
-                location={{}}
-                params={{}}
-                components={[]}
-            />
+    <Router history={history} routes={routes} />
   </Provider>,
   document.getElementById('app'))
 }

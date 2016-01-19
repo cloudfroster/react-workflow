@@ -8,9 +8,6 @@ let timeHander;
 
 class App extends Component {
 
-	static propTypes = {
-	}
-
   constructor() {
     super()
   }

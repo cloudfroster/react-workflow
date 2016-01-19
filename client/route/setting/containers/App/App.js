@@ -4,9 +4,6 @@ import style from './App.less'
 
 class App extends Component {
 
-	static propTypes = {
-	}
-
   constructor() {
     super()
   }
