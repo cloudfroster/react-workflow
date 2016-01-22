@@ -2,7 +2,8 @@ import React, { PropTypes, Component } from 'react'
 import {Link, IndexLink} from 'react-router'
 import {connect} from 'react-redux'
 import style from './App.less'
-
+import MarkDown from 'MarkDown'
+import rawMarkdown from './markdown.md'
 
 let timeHander;
 
@@ -31,6 +32,9 @@ class App extends Component {
           <div className="dashboard-tip">welcome</div>
           <div className="dashboard-title">DASHBOARD</div>
         </div>
+        <MarkDown>
+        {rawMarkdown}
+        </MarkDown>
       </div>
 		)
 	}

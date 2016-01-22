@@ -3,14 +3,6 @@ import styles from './Button.less'
 
 class Button extends Component {
 
-	static propTypes = {
-
-	}
-
-	static defaultProps = {
-
-	}
-
 	constructor(props) {
 		super(props)
 		this.state = {}
@@ -19,7 +11,7 @@ class Button extends Component {
 	render() {
 		return (
       <div>
-        button
+        buttons
       </div>
 		)
 	}

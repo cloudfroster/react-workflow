@@ -56,6 +56,10 @@ const appConfig = {
 
   resolve: {
     extensions: ['', '.webpack.js', '.web.js', '.js', '.jsx', '.less'],
+    root: [
+      path.join(__dirname, '../client/components'),
+      path.join(__dirname, '../client/theme'),
+    ],
   },
 
   plugins: [
@@ -111,7 +115,7 @@ const appConfig = {
         test: /\.json$/,
         loader: 'json-loader',
       }, {
-        test: /\.txt$/,
+        test: /\.(txt|md)$/,
         loader: 'raw-loader',
       }, {
         test: /\.(png|jpg|jpeg|gif|svg|woff|woff2)$/,
