@@ -89,7 +89,7 @@
     "url-loader": "~0.5.7",
     "webpack": "~1.12.11",
     "webpack-dev-middleware": "~1.5.0",
-    "webpack-hot-middleware": "~2.5.0"
+    "webpack-hot-middleware": "~2.6.1"
   },
   "dependencies": {
     "body-parser": "~1.14.1",
