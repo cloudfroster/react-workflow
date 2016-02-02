@@ -73,7 +73,7 @@
     "raw-loader": "~0.5.1",
     "react-document-meta": "~2.0.2",
     "react-transform-catch-errors": "~1.0.1",
-    "react-transform-hmr": "~1.0.1",
+    "react-transform-hmr": "~1.0.2",
     "redbox-react": "~1.2.0",
     "redux-devtools": "~3.0.1",
     "redux-devtools-dock-monitor": "~1.0.1",
