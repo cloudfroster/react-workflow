@@ -1,4 +1,2 @@
-# markdown 语法组件
-```
-var name = 'marchen'
-```
+# ctrl + q to change devtools position
+# ctrl + h to toggle devtools show
