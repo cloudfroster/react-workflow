@@ -1,7 +1,7 @@
 export let loginState = false
 
 export function logIn() {
-  loginState = true;
+  loginState = true
 }
 
 export function logOut(nextState, replaceState) {

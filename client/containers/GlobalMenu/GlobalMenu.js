@@ -9,7 +9,9 @@ class GlobalMenu extends Component {
   }
 
   render() {
-    const {dispatch, user} = this.props;
+
+    const {dispatch, user} = this.props
+
     return(
       <nav className='GlobalMenu'>
           <ul>

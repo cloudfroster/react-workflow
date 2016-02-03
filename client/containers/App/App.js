@@ -14,7 +14,7 @@ class App extends Component {
 		return(
       <div className="App">
         <Header />
-        <GlobalMenu className="bb"/>
+        <GlobalMenu />
         <div className="App-children">
           {this.props.children}
         </div>

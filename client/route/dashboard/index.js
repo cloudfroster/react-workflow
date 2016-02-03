@@ -23,5 +23,5 @@ if (module.hot) {
     window.rootCombineReducer.dashboard = require('./reducers').default
     const nextReducer = combineReducers(window.rootCombineReducer)
     window.store.replaceReducer(nextReducer)
-  });
+  })
 }

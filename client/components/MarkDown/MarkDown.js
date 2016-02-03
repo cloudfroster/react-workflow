@@ -1,5 +1,6 @@
 import React, { PropTypes, Component } from 'react'
 import marked from 'marked'
+import hljs from 'highlight.js'
 
 class MarkDown extends Component {
 
@@ -28,7 +29,13 @@ class MarkDown extends Component {
 
   rawMarkup() {
     return {
-      __html: marked(this.props.children, this.props.option)
+      __html: marked(this.props.children, {
+        ...this.props.option,
+        highlight: function (code) {
+          console.log(11111)
+          return hljs.highlightAuto(code).value;
+        }
+      })
     }
   }
 

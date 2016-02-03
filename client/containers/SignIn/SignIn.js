@@ -10,7 +10,7 @@ class SignIn extends Component {
 	render() {
 		return(
       <div className="SignIn">
-        登陆界面
+        Sign in
         {this.props.children}
       </div>
 		)

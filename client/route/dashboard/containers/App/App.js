@@ -5,7 +5,7 @@ import style from './App.less'
 import MarkDown from 'MarkDown'
 import rawMarkdown from './markdown.md'
 
-let timeHander;
+let timeHander
 
 class App extends Component {
 

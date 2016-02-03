@@ -63,20 +63,20 @@ const appConfig = {
   },
 
   plugins: [
-
-    new ExtractTextPlugin(DEBUG ? 'app.css' : '[chunkhash].app.css', {
-      allChunks: true,
-    }),
-
     // create index.html
     new HtmlWebpackPlugin({
       filename: 'index.html',
-      inject: true,
-      // see issue https://github.com/ampedandwired/html-webpack-plugin/issues/128
-      template: 'html?removeOptionalTags=false!./client/index.html',
       cache: true,
+      inject: true,
+      template: 'html!./client/index.html',
       favicon: './client/favicon.ico',
+      minify: {
+        removeComments: false,
+        collapseWhitespace: false,
+      },
     }),
+
+    new ExtractTextPlugin(DEBUG ? 'app.css' : '[chunkhash].app.css'),
 
     new webpack.optimize.OccurenceOrderPlugin(),
 

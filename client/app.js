@@ -7,16 +7,6 @@ import routes from './routes'
 import history from './history'
 import configureStore from './store/configureStore'
 
-class Hello extends React.Component {
-  render() {
-    return(
-      <div>
-        hello world
-      </div>
-    )
-  }
-}
-
 const store = window.store = configureStore()
 
 if(__DEV__) {
