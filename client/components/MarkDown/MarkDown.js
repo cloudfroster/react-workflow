@@ -1,6 +1,12 @@
 import React, { PropTypes, Component } from 'react'
 import marked from 'marked'
-import hljs from 'highlight.js'
+import highlightCss from 'highlight.js/styles/xcode.css'
+
+marked.setOptions({
+  highlight: function (code) {
+    return require('highlight.js').highlightAuto(code).value
+  }
+})
 
 class MarkDown extends Component {
 
@@ -29,13 +35,7 @@ class MarkDown extends Component {
 
   rawMarkup() {
     return {
-      __html: marked(this.props.children, {
-        ...this.props.option,
-        highlight: function (code) {
-          console.log(11111)
-          return hljs.highlightAuto(code).value;
-        }
-      })
+      __html: marked(this.props.children)
     }
   }
 
