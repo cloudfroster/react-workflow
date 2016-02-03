@@ -119,7 +119,7 @@ const appConfig = {
         loader: 'raw-loader',
       }, {
         test: /\.(png|jpg|jpeg|gif|svg|woff|woff2)$/,
-        loader: DEBUG ? 'url-loader?limit=50000' : 'url-loader?limit=5000',
+        loader: 'url-loader?limit=5000',
       }, {
         test: /\.(eot|ttf|wav|mp3)$/,
         loader: 'file-loader',
