@@ -1,4 +1,9 @@
 # Change Log
+# 版本1.0.8    (2016/2/4)
+* html-webpack-plugin缓存问题修复,可以热修改less(sass,css)文件
+* MarkDown组件完成
+* webpack添加搜索路径(client/component),可以全局引入这个路径下的组件
+
 # 版本1.0.8-pre    (2016/1/19)
 * 将redux-router替换成redux-simple-router
 
