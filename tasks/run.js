@@ -8,14 +8,14 @@ function format(time) {
 }
 
 function run(fn, options) {
-  const colors = require('colors')
+  const chalk = require('chalk')
 
   const start = new Date()
-  console.log(`[${format(start).magenta}] Starting '${fn.name.cyan}'...`)
+  console.log(`[${chalk.magenta(format(start))}] Starting '${chalk.cyan(fn.name)}'...`)
   return fn(options).then(() => {
     const end = new Date()
     const time = end.getTime() - start.getTime()
-    console.log(`[${format(end).magenta}] Finished '${fn.name.cyan}' after ${time} ms`)
+    console.log(`[${chalk.magenta(format(end))}] Finished '${chalk.cyan(fn.name)}' after ${time} ms`)
   })
 }
 
