@@ -107,7 +107,7 @@
     "react-redux": "~4.2.0",
     "react-router": "~1.0.2",
     "react-tap-event-plugin": "~0.2.2",
-    "redux": "~3.2.1",
+    "redux": "~3.3.0",
     "redux-simple-router": "~2.0.4",
     "superagent": "~1.7.2"
   }
