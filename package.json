@@ -4,7 +4,7 @@
     "node": ">= 5.0.0",
     "npm": ">= 3.4.0"
   },
-  "version": "1.0.8",
+  "version": "1.1.0",
   "description": "Large SPA boilerplate use react redux webpack babel es6 express browsync nodemon...",
   "main": "tasks/run.js",
   "scripts": {
@@ -56,8 +56,6 @@
     "file-loader": "~0.8.5",
     "fs-extra": "~0.26.5",
     "gh-pages": "~0.11.0",
-    "gulp": "~3.9.0",
-    "gulp-html-replace": "~1.5.5",
     "highlight.js": "~9.1.0",
     "html-loader": "~0.4.0",
     "html-webpack-plugin": "~2.8.1",

@@ -1,4 +1,7 @@
 # Change Log
+# 版本1.1.0    (2016/3/7)
+* 更新依赖,修复细节问题
+
 # 版本1.0.8    (2016/2/4)
 * html-webpack-plugin缓存问题修复,可以热修改less(sass,css)文件
 * MarkDown组件完成
