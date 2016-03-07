@@ -2,7 +2,7 @@
 //  use json-server set up express mock server at localhost:5000
 //---------------------------------------------------------------------
 const path = require('path')
-const colors = require('colors')
+const chalk = require('chalk')
 const logger = require('morgan')
 const express = require('express')
 const cookieParser = require('cookie-parser')
@@ -77,7 +77,7 @@ app.get('*', (req, res) => {
 // start server
 server.listen(app.get('port'), () => {
   /* eslint-disable no-console */
-  console.log(`The server is running at http://localhost:${app.get('port')}`.cyan)
+  console.log(chalk.cyan(`The server is running at http://localhost:${app.get('port')}`))
   if (process.send) {
     process.send('online')
   }

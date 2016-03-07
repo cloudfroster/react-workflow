@@ -2,7 +2,7 @@
 //  Remote server(virtual host)
 //---------------------------------------------------------------------
 const path = require('path')
-const colors = require('colors')
+const chalk = require('chalk')
 const logger = require('morgan')
 const express = require('express')
 const cookieParser = require('cookie-parser')
@@ -26,7 +26,7 @@ app.use('/api', jsonServer.router(path.join(__dirname, './api/db.json')))
 // start server
 app.listen(app.get('port'), () => {
   /* eslint-disable no-console */
-  console.log(`The remote server is running at http://localhost:${app.get('port')}`.cyan)
+  console.log(chalk.cyan(`The remote server is running at http://localhost:${app.get('port')}`))
   if (process.send) {
     process.send('online')
   }

@@ -39,7 +39,7 @@ function publish() {
 // copy pickFiles file to build folder
 function copyFileToBuild() {
 
-  const colors = require('colors')
+  const chalk = require('chalk')
 
   function isInArray(value, array) {
     for(let i = 0, len = array.length; i < len; i++) {
@@ -61,7 +61,7 @@ function copyFileToBuild() {
     if(err) {
       throw err
     }
-    console.log('copy file to build folder finished!'.cyan)
+    console.log(chalk.cyan('copy file to build folder finished!'))
   })
 }
 
