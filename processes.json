@@ -1,3 +1,4 @@
+// configuration for pm2, https://github.com/Unitech/pm2
 {
   "name": "react-workflow",
   "script": "server/server.js",
