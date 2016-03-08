@@ -8,10 +8,6 @@ const autoprefixer = require('autoprefixer')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
-const DEBUG = global.DEBUG
-const VERBOSE = global.VERBOSE
-const WATCH = global.WATCH
-
 const AUTOPREFIXER = `{
   browsers: [
     'Android >= 4',
@@ -25,11 +21,11 @@ const AUTOPREFIXER = `{
 }`
 
 // for babel and other tool env
-process.env.NODE_ENV = DEBUG ? 'development' : 'production'
+process.env.NODE_ENV = global.DEBUG ? 'development' : 'production'
 
 const GLOBALS = {
-  __DEV__: DEBUG,
-  __PRO__: !DEBUG,
+  __DEV__: global.DEBUG,
+  __PRO__: !global.DEBUG,
 }
 
 //-------------------------------------------------------------------------
@@ -39,7 +35,7 @@ const GLOBALS = {
 const appConfig = {
 
   entry: [
-    ...(WATCH ? ['webpack-hot-middleware/client'] : []),
+    ...(global.DEBUG ? ['webpack-hot-middleware/client'] : []),
     path.join(__dirname, '../client/app.js'),
   ],
 
@@ -48,11 +44,11 @@ const appConfig = {
     // if your want to cdn, just change here
     publicPath: '/',
     sourcePrefix: '',
-    trunkFilename: DEBUG ? '[id].bundle.js' : '[id].[chunkhash].bundle.js',
-    filename: DEBUG ? 'bundle.js' : '[chunkhash].[name].bundle.js',
+    trunkFilename: global.DEBUG ? '[id].bundle.js' : '[id].[chunkhash].bundle.js',
+    filename: global.DEBUG ? 'bundle.js' : '[chunkhash].[name].bundle.js',
   },
 
-  devtool: DEBUG ? 'cheap-module-eval-source-map' : false,
+  devtool: global.DEBUG ? 'cheap-module-eval-source-map' : false,
 
   resolve: {
     extensions: ['', '.webpack.js', '.web.js', '.js', '.jsx', '.less'],
@@ -70,13 +66,21 @@ const appConfig = {
       inject: true,
       template: 'html!./client/index.html',
       favicon: './client/favicon.ico',
-      minify: {
-        removeComments: false,
-        collapseWhitespace: false,
-      },
+      minify: global.DEBUG ? {} : {
+        removeComments: true,
+        collapseWhitespace: true,
+        removeRedundantAttributes: true,
+        useShortDoctype: true,
+        removeEmptyAttributes: true,
+        removeStyleLinkTypeAttributes: true,
+        keepClosingSlash: true,
+        minifyJS: true,
+        minifyCSS: true,
+        minifyURLs: true,
+      }
     }),
 
-    new ExtractTextPlugin(DEBUG ? 'app.css' : '[chunkhash].app.css'),
+    new ExtractTextPlugin(global.DEBUG ? 'app.css' : '[chunkhash].app.css'),
 
     new webpack.optimize.OccurenceOrderPlugin(),
 
@@ -84,22 +88,22 @@ const appConfig = {
 
     new webpack.optimize.CommonsChunkPlugin({
       name: "commons",
-      filename: DEBUG ? 'commons.js' : '[chunkhash].[name].js',
+      filename: global.DEBUG ? 'commons.js' : '[chunkhash].[name].js',
       // (Modules must be shared between 2 entries)
       minChunks: 2,
       /* chunks: ["pageA", "pageB"], */
       // (Only use these entries)
     }),
 
-    ...(!DEBUG ? [
+    ...(!global.DEBUG ? [
       new webpack.optimize.UglifyJsPlugin({
         compress: {
-          warnings: VERBOSE,
+          warnings: false,
         },
       }),
       //new webpack.optimize.AggressiveMergingPlugin(),
     ] : []),
-    ...(WATCH ? [
+    ...(global.DEBUG ? [
       new webpack.HotModuleReplacementPlugin(),
       new webpack.NoErrorsPlugin(),
     ] : []),
@@ -125,10 +129,10 @@ const appConfig = {
         loader: 'file-loader',
       }, {
         test: /\.css/,
-        loader: ExtractTextPlugin.extract('style-loader', 'css-loader?' + (DEBUG ? 'sourceMap' : '') + `!postcss-loader?${AUTOPREFIXER}`),
+        loader: ExtractTextPlugin.extract('style-loader', 'css-loader?' + (global.DEBUG ? 'sourceMap' : '') + `!postcss-loader?${AUTOPREFIXER}`),
       }, {
         test: /\.less$/,
-        loader: ExtractTextPlugin.extract('style-loader', 'css-loader?' + (DEBUG ? 'sourceMap' : '') + `!postcss-loader?${AUTOPREFIXER}!less-loader?` + (DEBUG ? 'sourceMap' : '')),
+        loader: ExtractTextPlugin.extract('style-loader', 'css-loader?' + (global.DEBUG ? 'sourceMap' : '') + `!postcss-loader?${AUTOPREFIXER}!less-loader?` + (global.DEBUG ? 'sourceMap' : '')),
       },
     ],
   },
@@ -137,19 +141,19 @@ const appConfig = {
     return [autoprefixer]
   },
 
-  cache: DEBUG,
-  debug: DEBUG,
+  cache: global.DEBUG,
+  debug: global.DEBUG,
 
   stats: {
     colors: true,
-    reasons: DEBUG,
-    hash: VERBOSE,
-    version: VERBOSE,
+    reasons: global.DEBUG,
+    hash: false,
+    version: false,
     timings: true,
-    chunks: VERBOSE,
-    chunkModules: VERBOSE,
-    cached: VERBOSE,
-    cachedAssets: VERBOSE,
+    chunks: false,
+    chunkModules: false,
+    cached: false,
+    cachedAssets: false,
   },
 
 }

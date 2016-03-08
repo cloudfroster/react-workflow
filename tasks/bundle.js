@@ -20,7 +20,7 @@ function bundle() {
       return resolve()
     }
 
-    if (global.WATCH) {
+    if (global.DEBUG) {
       bundler.watch(200, onComplete)
     } else {
       bundler.run(onComplete)

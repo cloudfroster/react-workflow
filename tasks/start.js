@@ -8,10 +8,7 @@ const run = require('./run')
 const co = require('co')
 
 // Development model
-global.WATCH = true         // watch rebuild...
-global.DEBUG = true         // hot reload...
-global.VERBOSE = false      // verbose webpack info...
-
+global.DEBUG = true
 
 function start() {
   return co(function* () {

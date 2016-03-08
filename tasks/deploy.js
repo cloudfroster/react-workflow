@@ -6,9 +6,7 @@ const run = require('./run')
 const co = require('co')
 
 // Production model
-global.WATCH = false        // watch rebuild...
-global.DEBUG = false        // hot reload...
-global.VERBOSE = false      // verbose webpack info...
+global.DEBUG = false
 
 function deploy() {
   return co(function* () {
