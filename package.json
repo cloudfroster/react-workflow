@@ -97,7 +97,7 @@
     "json-server": "~0.8.9",
     "material-ui": "~0.14.4",
     "morgan": "~1.6.1",
-    "normalize.css": "~3.0.3",
+    "normalize.css": "~4.0.0",
     "react": "~0.14.7",
     "react-dom": "~0.14.7",
     "react-mixin": "~3.0.4",
