@@ -82,7 +82,7 @@
     "socket.io": "~1.4.5",
     "source-map": "~0.5.3",
     "source-map-support": "~0.4.0",
-    "style-loader": "~0.13.0",
+    "style-loader": "~0.13.1",
     "url-loader": "~0.5.7",
     "webpack": "~1.12.13",
     "webpack-dev-middleware": "~1.6.0",
