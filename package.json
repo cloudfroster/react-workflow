@@ -85,7 +85,7 @@
     "style-loader": "~0.13.1",
     "url-loader": "~0.5.7",
     "webpack": "~1.12.13",
-    "webpack-dev-middleware": "~1.6.0",
+    "webpack-dev-middleware": "~1.6.1",
     "webpack-hot-middleware": "~2.9.1"
   },
   "dependencies": {
