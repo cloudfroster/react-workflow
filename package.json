@@ -100,7 +100,7 @@
     "material-ui": "~0.14.4",
     "morgan": "~1.6.1",
     "normalize.css": "~4.0.0",
-    "react": "~0.14.7",
+    "react": "~15.0.1",
     "react-dom": "~0.14.7",
     "react-mixin": "~3.0.4",
     "react-motion": "~0.4.2",
