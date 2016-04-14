@@ -10,9 +10,9 @@ global.DEBUG = false
 
 function deploy() {
   return co(function* () {
+    run(require('./server'))
     yield run(require('./clean'))
     yield run(require('./bundle'))
-    yield run(require('./server'))
     /* yield run(require('./publish')) */
   })
 }
