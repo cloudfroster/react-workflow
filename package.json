@@ -94,7 +94,7 @@
     "body-parser": "~1.14.1",
     "cookie-parser": "~1.4.1",
     "express": "~4.13.4",
-    "history": "~1.17.0",
+    "history": "~2.0.2",
     "http-proxy": "~1.13.1",
     "json-server": "~0.8.9",
     "material-ui": "~0.14.4",
