@@ -105,7 +105,7 @@
     "react-mixin": "~3.0.4",
     "react-motion": "~0.4.2",
     "react-redux": "~4.4.4",
-    "react-router": "~2.2.2",
+    "react-router": "~2.3.0",
     "react-tap-event-plugin": "~1.0.0",
     "redux": "~3.3.1",
     "redux-simple-router": "~2.0.4",
