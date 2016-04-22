@@ -11,6 +11,7 @@ const bundler = webpack(webpackConfig)
 
 function browserSync() {
   return new Promise((reslove, reject) => {
+
     try {
       bs.init({
         proxy: {
@@ -45,13 +46,13 @@ function browserSync() {
         // including full page reloads if HMR won't work
         files: [
           './build/**/*.css',
-          '!./build/**/*.js',
         ],
     })
     reslove()
   } catch (e) {
       reject(e)
     }
+
   })
 }
 

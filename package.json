@@ -4,7 +4,7 @@
     "node": ">= 5.0.0",
     "npm": ">= 3.4.0"
   },
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Large SPA boilerplate use react redux webpack babel es6 express browsync nodemon...",
   "main": "tasks/run.js",
   "scripts": {
@@ -15,7 +15,6 @@
     "bundle": "node tasks/run.js bundle",
     "browserSync": "node tasks/run.js browserSync",
     "server": "node tasks/run.js server",
-    "test": "jest",
     "lint": "eslint client && eslint server && csslint --quiet build",
     "csslint": "csslint --quiet build"
   },
@@ -31,11 +30,9 @@
   "author": "marchen",
   "license": "MIT",
   "devDependencies": {
-    "assets-webpack-plugin": "~3.4.0",
     "autoprefixer": "~6.3.6",
     "babel-core": "~6.7.6",
     "babel-eslint": "~6.0.2",
-    "babel-jest": "^11.0.0",
     "babel-loader": "~6.2.4",
     "babel-plugin-react-transform": "~2.0.2",
     "babel-plugin-transform-class-constructor-call": "~6.6.5",
@@ -56,7 +53,6 @@
     "eslint-plugin-react": "~4.2.3",
     "extract-text-webpack-plugin": "~1.0.0",
     "file-loader": "~0.8.5",
-    "fs-extra": "~0.26.7",
     "gh-pages": "~0.11.0",
     "highlight.js": "~9.1.0",
     "html-loader": "~0.4.0",
@@ -81,9 +77,6 @@
     "redux-thunk": "~2.0.1",
     "serialize-javascript": "~1.2.0",
     "serve-favicon": "~2.3.0",
-    "socket.io": "~1.4.5",
-    "source-map": "~0.5.3",
-    "source-map-support": "~0.4.0",
     "style-loader": "~0.13.1",
     "url-loader": "~0.5.7",
     "webpack": "~1.12.15",
@@ -97,12 +90,10 @@
     "history": "~1.17.0",
     "http-proxy": "~1.13.1",
     "json-server": "~0.8.9",
-    "material-ui": "~0.14.4",
     "morgan": "~1.6.1",
     "normalize.css": "~4.1.1",
-    "react": "~0.14.7",
-    "react-dom": "~0.14.7",
-    "react-mixin": "~3.0.4",
+    "react": "~15.0.1",
+    "react-dom": "~15.0.1",
     "react-motion": "~0.4.2",
     "react-redux": "~4.4.4",
     "react-router": "~2.2.2",
@@ -110,18 +101,5 @@
     "redux": "~3.3.1",
     "redux-simple-router": "~2.0.4",
     "superagent": "~1.8.3"
-  },
-  "jest": {
-    "unmockedModulePathPatterns": [
-      "react",
-      "rect-dom",
-      "react-addons-test-utils"
-    ],
-    "modulePathIgnorePatterns": [
-      "node_modules",
-      "client",
-      "server",
-      "tasks"
-    ]
   }
 }
