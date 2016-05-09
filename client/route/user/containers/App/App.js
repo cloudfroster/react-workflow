@@ -3,8 +3,8 @@ import style from './App.less'
 
 class App extends Component {
 
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
   }
 
 	render() {

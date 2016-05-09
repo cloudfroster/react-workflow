@@ -2,9 +2,8 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import normalize from 'normalize.css'
 import {Provider} from 'react-redux'
-import {Router, Route, browserHistory} from 'react-router'
+import {Router, browserHistory as history} from 'react-router'
 import routes from './routes'
-import history from './history'
 import configureStore from './store/configureStore'
 
 const store = window.store = configureStore()

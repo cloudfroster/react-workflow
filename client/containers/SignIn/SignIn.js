@@ -1,4 +1,5 @@
 import React, { PropTypes, Component } from 'react'
+import {browserHistory} from 'react-router'
 
 class SignIn extends Component {
 
@@ -7,11 +8,21 @@ class SignIn extends Component {
     this.state = {}
   }
 
+  signIn(e) {
+    //this.props.dispatch({type: 'sign-in'})
+    browserHistory.push('/')
+  }
+
 	render() {
 		return(
       <div className="SignIn">
-        Sign in
-        {this.props.children}
+        <div className="bar">
+          <label htmlFor="username">username:</label><input type="text"/>
+        </div>
+        <div className="bar">
+          <label htmlFor="password">password:</label><input type="password"/>
+        </div>
+        <button type="button" onClick={this.signIn.bind(this)}>Sign in</button>
       </div>
 		)
 	}

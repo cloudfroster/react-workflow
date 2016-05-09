@@ -1,7 +1,7 @@
 import {createStore, combineReducers, applyMiddleware, compose} from 'redux'
 import {syncHistory} from 'redux-simple-router'
 import thunk from 'redux-thunk'
-import history from '../history'
+import {browserHistory as history} from 'react-router'
 import rootReducer from '../reducers'
 
 function configureStore(initState) {
