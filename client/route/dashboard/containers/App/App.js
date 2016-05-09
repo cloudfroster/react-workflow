@@ -1,5 +1,5 @@
 import React, { PropTypes, Component } from 'react'
-import {Link, IndexLink} from 'react-router'
+import {Link, IndexLink, browserHistory} from 'react-router'
 import {connect} from 'react-redux'
 import style from './App.less'
 import MarkDown from 'MarkDown'
@@ -9,8 +9,8 @@ let timeHander
 
 class App extends Component {
 
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
   }
 
   componentWillUnmount() {
