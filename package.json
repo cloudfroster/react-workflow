@@ -94,7 +94,7 @@
     "normalize.css": "~4.1.1",
     "react": "~15.0.1",
     "react-dom": "~15.0.1",
-    "react-motion": "~0.4.2",
+    "react-motion": "~0.4.4",
     "react-redux": "~4.4.4",
     "react-router": "~2.5.1",
     "react-tap-event-plugin": "~1.0.0",
