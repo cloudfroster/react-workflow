@@ -88,7 +88,7 @@
     "cookie-parser": "~1.4.1",
     "express": "~4.13.4",
     "history": "~1.17.0",
-    "http-proxy": "~1.13.1",
+    "http-proxy": "~1.13.3",
     "json-server": "~0.8.9",
     "morgan": "~1.6.1",
     "normalize.css": "~4.1.1",
