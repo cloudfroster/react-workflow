@@ -84,7 +84,7 @@
     "webpack-hot-middleware": "~2.11.0"
   },
   "dependencies": {
-    "body-parser": "~1.15.1",
+    "body-parser": "~1.15.2",
     "cookie-parser": "~1.4.1",
     "express": "~4.13.4",
     "history": "~1.17.0",
