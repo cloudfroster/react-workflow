@@ -64,7 +64,7 @@
     "nodemon": "~1.8.1",
     "postcss-loader": "~0.9.1",
     "pretty-error": "~2.0.0",
-    "query-string": "~4.2.2",
+    "query-string": "~4.2.3",
     "raw-loader": "~0.5.1",
     "react-document-meta": "~2.0.3",
     "react-transform-catch-errors": "~1.0.2",
