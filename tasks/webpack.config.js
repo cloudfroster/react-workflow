@@ -24,6 +24,7 @@ const AUTOPREFIXER = `{
 process.env.NODE_ENV = global.DEBUG ? 'development' : 'production'
 
 const GLOBALS = {
+  'process.env.NODE_ENV': JSON.stringify(global.DEBUG ? 'development' : 'production'),
   __DEV__: global.DEBUG,
   __PRO__: !global.DEBUG,
 }
