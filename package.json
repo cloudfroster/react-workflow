@@ -87,7 +87,7 @@
     "body-parser": "~1.15.1",
     "cookie-parser": "~1.4.1",
     "express": "~4.14.0",
-    "history": "~1.17.0",
+    "history": "~4.2.1",
     "http-proxy": "~1.14.0",
     "json-server": "~0.8.9",
     "morgan": "~1.6.1",
