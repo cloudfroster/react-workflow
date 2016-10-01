@@ -31,7 +31,7 @@
   "license": "MIT",
   "devDependencies": {
     "autoprefixer": "~6.3.6",
-    "babel-core": "~6.8.0",
+    "babel-core": "~6.17.0",
     "babel-eslint": "~6.1.0",
     "babel-loader": "~6.2.4",
     "babel-plugin-react-transform": "~2.0.2",
