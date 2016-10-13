@@ -63,7 +63,7 @@
     "marked": "~0.3.5",
     "nodemon": "~1.8.1",
     "postcss-loader": "~0.9.1",
-    "pretty-error": "~2.0.0",
+    "pretty-error": "~2.0.1",
     "query-string": "~4.2.2",
     "raw-loader": "~0.5.1",
     "react-document-meta": "~2.0.3",
