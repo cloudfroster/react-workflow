@@ -4,11 +4,6 @@ import style from './Template.less'
 
 class Template extends Component {
 
-	constructor(props) {
-		super(props)
-		this.state = {}
-	}
-
 	render() {
 		return (
 			<Motion defaultStyle={{x: 0}} style={{x: spring(10)}}>

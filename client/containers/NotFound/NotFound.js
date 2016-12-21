@@ -3,10 +3,6 @@ import {Link, IndexLink} from 'react-router'
 
 class NotFound extends Component {
 
-  constructor(props) {
-    super(props)
-  }
-
   render() {
 
     return (

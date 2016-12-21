@@ -3,11 +3,6 @@ import {browserHistory} from 'react-router'
 
 class SignIn extends Component {
 
-  constructor(props) {
-    super(props)
-    this.state = {}
-  }
-
   signIn(e) {
     //this.props.dispatch({type: 'sign-in'})
     browserHistory.push('/')

@@ -4,10 +4,6 @@ import style from './GlobalMenu.less'
 
 class GlobalMenu extends Component {
 
-  constructor(props) {
-    super(props)
-  }
-
   render() {
 
     const {dispatch, user} = this.props

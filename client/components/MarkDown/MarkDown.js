@@ -29,10 +29,6 @@ class MarkDown extends Component {
     children: '',
 	};
 
-  constructor(props) {
-    super(props)
-  }
-
   rawMarkup() {
     return {
       __html: marked(this.props.children)

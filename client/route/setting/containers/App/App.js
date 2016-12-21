@@ -4,10 +4,6 @@ import style from './App.less'
 
 class App extends Component {
 
-  constructor() {
-    super()
-  }
-
 	render() {
 
     const {time, welcome} = this.props

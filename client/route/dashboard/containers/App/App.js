@@ -9,10 +9,6 @@ let timeHander
 
 class App extends Component {
 
-  constructor(props) {
-    super(props)
-  }
-
   componentWillUnmount() {
     clearInterval(timeHander)
   }
