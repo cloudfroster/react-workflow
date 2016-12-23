@@ -89,7 +89,7 @@
     "express": "~4.14.0",
     "history": "~1.17.0",
     "http-proxy": "~1.14.0",
-    "json-server": "~0.8.9",
+    "json-server": "~0.8.17",
     "morgan": "~1.6.1",
     "normalize.css": "~4.2.0",
     "react": "~15.0.1",
