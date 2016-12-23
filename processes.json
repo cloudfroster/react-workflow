@@ -1,0 +1,14 @@
+// configuration for pm2, https://github.com/Unitech/pm2
+{
+  "name": "react-workflow",
+  "script": "server/server.js",
+  "node_args": "",
+  "log_date_format": "YYYY-MM-DD HH:mm Z",
+  "error_file": "/var/log/react-workflow/react-workflow.stderr.log",
+  "out_file": "/var/log/react-workflow/react-workflow.stdout.log",
+  "instances": 0,
+  "exec_mode": "cluster_mode",
+  "watch": true,
+  "ignore_watch": "node_modules"
+}
+
