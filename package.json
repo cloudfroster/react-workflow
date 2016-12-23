@@ -50,7 +50,7 @@
     "csslint": "~0.10.0",
     "del": "~2.2.1",
     "eslint": "~2.13.0",
-    "eslint-plugin-react": "~4.2.3",
+    "eslint-plugin-react": "~6.2.0",
     "extract-text-webpack-plugin": "~1.0.0",
     "file-loader": "~0.9.0",
     "gh-pages": "~0.11.0",
